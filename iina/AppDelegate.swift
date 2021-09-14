@@ -170,8 +170,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     Logger.log("App launched")
-
     Logger.log("Using \(PlayerCore.active.mpv.mpvVersion!)")
+
+    // IINA supports a preference that allows the user to override the systemwide user
+    // interface appearance configured in macOS System Preferences - General. Set the
+    // configured appearance at the application level so it applies to all of the user
+    // interface elements and observer the IINA preference setting and update the application
+    // appearance if the user changes the preference.
+    setAppearance(Preference.enum(for: .themeMaterial))
+    UserDefaults.standard.addObserver(self, forKeyPath: PK.themeMaterial.rawValue, options: .new, context: nil)
 
     if !isReady {
       getReady()
@@ -240,6 +247,30 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     NSRunningApplication.current.activate(options: [.activateIgnoringOtherApps, .activateAllWindows])
 
     NSApplication.shared.servicesProvider = self
+  }
+
+  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+     guard let keyPath = keyPath, let change = change else { return }
+     switch keyPath {
+     case PK.themeMaterial.rawValue:
+       if let newValue = change[.newKey] as? Int {
+         setAppearance(Preference.Theme(rawValue: newValue))
+       }
+     default:
+       return
+     }
+  }
+
+  internal func setAppearance(_ theme: Preference.Theme?) {
+    guard let theme = theme else { return }
+    // The user interface appearance can only be set at the application level in macOS 10.14
+    // (Mojave) and above. In earlier versions of macOS the appearance is controlled at the
+    // windows level. Currently IINA only applies the appearance preference to the main player
+    // window when running under macOS 10.13 (High Sierra) and below. Other windows continue to
+    // use the systemwide appearance preference setting.
+    if #available(macOS 10.14, *) {
+      NSApp.appearance = NSAppearance(iinaTheme: theme)
+    }
   }
 
   /** Show welcome window if `application(_:openFile:)` wasn't called, i.e. launched normally. */
@@ -378,13 +409,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       Logger.log("Cannot parse URL using URLComponents", level: .warning)
       return
     }
-    
+
     if parsed.scheme != "iina" {
       // try to open the URL directly
       PlayerCore.activeOrNewForMenuAction(isAlternative: false).openURLString(url)
       return
     }
-    
+
     // handle url scheme
     guard let host = parsed.host else { return }
 
