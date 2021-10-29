@@ -181,7 +181,7 @@ class InspectorWindowController: NSWindowController, NSTableViewDelegate, NSTabl
         MPVProperty.totalAvsyncChange: self.totalAvsyncField,
         MPVProperty.frameDropCount: self.droppedFramesField,
         MPVProperty.mistimedFrameCount: self.mistimedFramesField,
-        MPVProperty.displayFps: self.displayFPSField,
+        MPVProperty.overrideDisplayFps: self.displayFPSField,
         MPVProperty.estimatedVfFps: self.voFPSField,
         MPVProperty.estimatedDisplayFps: self.edispFPSField
       ]

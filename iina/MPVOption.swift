@@ -181,8 +181,6 @@ struct MPVOption {
     static let videoLatencyHacks = "video-latency-hacks"
     /** --override-display-fps=<fps> */
     static let overrideDisplayFps = "override-display-fps"
-    /** --display-fps=<fps> */
-    static let displayFps = "display-fps"
     /** --hwdec=<api> */
     static let hwdec = "hwdec"
     /** --gpu-hwdec-interop=<auto|all|no|name> */

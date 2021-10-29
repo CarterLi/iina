@@ -1111,7 +1111,7 @@ class MainWindowController: PlayerWindowController {
 
       userDisplay = videoView.currentDisplay
       userDisplayMode = CGDisplayCopyDisplayMode(userDisplay!)
-      userRefreshRate = player.mpv.getDouble(MPVProperty.displayFps)
+      userRefreshRate = player.mpv.getDouble(MPVProperty.overrideDisplayFps)
 
       if (userDisplayMode != nil) {
         let displayModes = CGDisplayCopyAllDisplayModes(userDisplay!, nil) as! [CGDisplayMode]
@@ -1122,7 +1122,7 @@ class MainWindowController: PlayerWindowController {
             if ((displayMode.ioFlags & UInt32(kDisplayModeNativeFlag) != 0) &&
                 displayMode.refreshRate.distance(to: refreshRate) < 0.02) {
               CGDisplaySetDisplayMode(userDisplay!, displayMode, nil)
-              player.mpv.setDouble(MPVOption.Video.displayFps, displayMode.refreshRate)
+              player.mpv.setDouble(MPVOption.Video.overrideDisplayFps, displayMode.refreshRate)
               break matching
             }
           }
@@ -1212,7 +1212,7 @@ class MainWindowController: PlayerWindowController {
     // restore refresh rate
     if userDisplayMode != nil {
       CGDisplaySetDisplayMode(userDisplay!, userDisplayMode!, nil)
-      player.mpv.setDouble(MPVOption.Video.displayFps, userRefreshRate!)
+      player.mpv.setDouble(MPVOption.Video.overrideDisplayFps, userRefreshRate!)
     }
 
     // show titleBarView
