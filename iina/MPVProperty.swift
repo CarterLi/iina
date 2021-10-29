@@ -233,8 +233,8 @@ struct MPVProperty {
   static let currentWindowScale = "current-window-scale"
   /** display-names */
   static let displayNames = "display-names"
-  /** display-fps */
-  static let displayFps = "display-fps"
+  /** override-display-fps */
+  static let overrideDisplayFps = "override-display-fps"
   /** estimated-display-fps */
   static let estimatedDisplayFps = "estimated-display-fps"
   /** vsync-jitter */
