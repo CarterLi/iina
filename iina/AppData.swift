@@ -110,4 +110,5 @@ extension Notification.Name {
   static let iinaHistoryUpdated = Notification.Name("IINAHistoryUpdated")
   static let iinaLegacyFullScreen = Notification.Name("IINALegacyFullScreen")
   static let iinaKeyBindingChanged = Notification.Name("iinaKeyBindingChanged")
+  static let iinaPlaySliderLoopKnobChanged = Notification.Name("iinaPlaySliderLoopKnobChanged")
 }
