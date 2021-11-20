@@ -424,7 +424,9 @@ static inline double avr2d(AVRational a) {
           break;
         }
         
-        metadata = (AVMasteringDisplayMetadata *)av_frame_get_side_data(pFrame, AV_FRAME_DATA_MASTERING_DISPLAY_METADATA)->data;
+        AVFrameSideData* side_data = av_frame_get_side_data(pFrame, AV_FRAME_DATA_MASTERING_DISPLAY_METADATA);
+        
+        if(side_data) metadata = (AVMasteringDisplayMetadata *) side_data->data;
         break;
       }
     }
