@@ -1105,12 +1105,12 @@ class PlayerCore: NSObject {
 
   // MARK: - Listeners
 
-  func fileStarted() {
+  func fileStarted(path: String) {
     Logger.log("File started", subsystem: subsystem)
     info.justStartedFile = true
     info.disableOSDForFileLoading = true
     currentMediaIsAudio = .unknown
-    guard let path = mpv.getString(MPVProperty.path) else { return }
+
     info.currentURL = path.contains("://") ?
       URL(string: path.addingPercentEncoding(withAllowedCharacters: .urlAllowed) ?? path) :
       URL(fileURLWithPath: path)
@@ -1118,6 +1118,10 @@ class PlayerCore: NSObject {
 
     if #available(OSX 10.13, *), RemoteCommandController.useSystemMediaControl {
       NowPlayingInfoManager.updateInfo(withTitle: true)
+    }
+
+    if #available(macOS 10.15, *), !info.isNetworkResource {
+      mainWindow.videoView.requestHdrModeForFile(path)
     }
 
     // Auto load
@@ -1510,7 +1514,7 @@ class PlayerCore: NSObject {
         }
       } else {
         Logger.log("Request new thumbnails", subsystem: subsystem)
-        ffmpegController.generateThumbnail(forFile: url.path)
+        ffmpegController.generateThumbnail(forFile: url.path, thumbWidth:Int32(Preference.integer(for: .thumbnailWidth)))
       }
     }
   }
