@@ -40,9 +40,6 @@ class VideoView: NSView {
 
   var pendingRedrawAfterEnteringPIP = false;
 
-  // HDR
-  var hdrMetadata: (primaries: String?, transfer: String?, max_luminance: Float?, min_luminance: Float?)?;
-
   // MARK: - Attributes
 
   override var mouseDownCanMoveWindow: Bool {
@@ -265,14 +262,10 @@ class VideoView: NSView {
 
 @available(macOS 10.15, *)
 extension VideoView {
-  func requestHdrModeForFile(_ path: String) {
-    hdrMetadata = importFileColorSpace(path)
-    refreshEdrMode()
-  }
-
   func refreshEdrMode() {
-    guard let displayId = currentDisplay, let meta = hdrMetadata else { return };
-    let edrEnabled = requestEdrMode(meta.primaries, meta.transfer, meta.max_luminance, meta.min_luminance)
+    guard player.mainWindow.loaded else { return }
+    guard let displayId = currentDisplay else { return };
+    let edrEnabled = requestEdrMode()
     let edrAvailable = edrEnabled != false
     if player.info.hdrAvailable != edrAvailable {
       player.mainWindow.quickSettingView.pleaseChangeHdrAvailable(available: edrAvailable)
@@ -280,20 +273,22 @@ extension VideoView {
     if edrEnabled != true { setICCProfile(displayId) }
   }
 
-  func requestEdrMode(_ primaries: String?, _ transfer: String?, _ max_luminance: Float?, _ min_luminance: Float?) -> Bool? {
-    guard let transfer = transfer, let primaries = primaries else {
-      // SDR content
-      return false;
-    }
+  func requestEdrMode() -> Bool? {
+    guard let mpv = player.mpv else { return false }
+
+    guard mpv.getDouble(MPVProperty.videoParamsSigPeak) > 1.0 else { return false } // SDR content
+
     guard (window?.screen?.maximumPotentialExtendedDynamicRangeColorComponentValue ?? 1.0) > 1.0 else {
       Logger.log("HDR: HDR video was found but the display does not support EDR mode");
       return false;
     }
 
+    guard let primaries = mpv.getString(MPVProperty.videoParamsPrimaries), let gamma = mpv.getString(MPVProperty.videoParamsGamma) else { return false }
+
     var name: CFString? = nil;
     switch primaries {
     case "display-p3":
-      switch transfer {
+      switch gamma {
       case "pq":
         if #available(macOS 10.15.4, *) {
           name = CGColorSpace.displayP3_PQ
@@ -307,7 +302,7 @@ extension VideoView {
       }
 
     case "bt.2020": // deprecated
-      switch transfer {
+      switch gamma {
       case "pq":
         if #available(macOS 11.0, *) {
           name = CGColorSpace.itur_2020_PQ
@@ -324,11 +319,8 @@ extension VideoView {
         name = CGColorSpace.itur_2020
       }
 
-    case "dci-p3":
-      name = CGColorSpace.dcip3
-
     default:
-      Logger.log("HDR: Unknown HDR color space information transfer=\(transfer) primaries=\(primaries)");
+      Logger.log("HDR: Unknown HDR color space information gamma=\(gamma) primaries=\(primaries)");
       return false;
     }
 
@@ -338,35 +330,9 @@ extension VideoView {
 
     videoLayer.colorspace = CGColorSpace(name: name!)
     player.mpv.setString(MPVOption.GPURendererOptions.iccProfile, "")
-    player.mpv.setString(MPVOption.GPURendererOptions.targetTrc, transfer)
+    player.mpv.setString(MPVOption.GPURendererOptions.targetTrc, gamma)
     player.mpv.setString(MPVOption.GPURendererOptions.targetPrim, primaries)
-    // videoLayer.edrMetadata = CAEDRMetadata.hdr10(minLuminance: min_luminance, maxLuminance: max_luminance, opticalOutputScale: 100); // OpenGL layer doesn't support edrMetadata
     return true;
-  }
-
-  private func importFileColorSpace(_ path: String) -> (primaries: String?, transfer: String?, max_luminance: Float?, min_luminance: Float?)
-  {
-    var result: (primaries: String?, transfer: String?, max_luminance: Float?, min_luminance: Float?)
-    guard let colorspaceData = FFmpegController.getColorSpaceMetadata(forFile: path) else { return result }
-
-    colorspaceData.forEach { (k, v) in
-      switch k as? String {
-      case "primaries":
-        result.primaries = v as? String
-      case "color-trc":
-        result.transfer = v as? String
-      case "max_luminance":
-        result.max_luminance = (v as? NSNumber)?.floatValue
-      case "min_luminance":
-        result.min_luminance = (v as? NSNumber)?.floatValue
-      default:
-        break
-      }
-    }
-
-    Logger.log("HDR: Received color space metadata for HDR activation: \(result)")
-
-    return result;
   }
 }
 

@@ -770,6 +770,10 @@ class MPVController: NSObject {
       player.postNotification(.iinaVIDChanged)
       player.sendOSD(.track(player.info.currentTrack(.video) ?? .noneVideoTrack))
 
+      if #available(macOS 10.15, *) {
+        player.refreshEdrMode()
+      }
+
     case MPVOption.TrackSelection.aid:
       player.info.aid = Int(getInt(MPVOption.TrackSelection.aid))
       guard player.mainWindow.loaded else { break }

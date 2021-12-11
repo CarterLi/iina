@@ -85,8 +85,8 @@
 /* Class = "NSTextFieldCell"; title = "Editions:"; ObjectID = "POj-mQ-zP9"; */
 "POj-mQ-zP9.title" = "集数:";
 
-/* Class = "NSTextFieldCell"; title = "Primaries:"; ObjectID = "tpN-Ov-ew9"; */
-"tpN-Ov-ew9.title" = "色域:";
+/* Class = "NSTextFieldCell"; title = "Primaries:"; ObjectID = "1kw-LO-KmJ"; */
+"1kw-LO-KmJ.title" = "色域:";
 
 /* Class = "NSTextFieldCell"; title = "Format:"; ObjectID = "PQD-yB-mm6"; */
 "PQD-yB-mm6.title" = "格式:";
