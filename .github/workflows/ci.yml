@@ -8,13 +8,24 @@ on:
 
 jobs:
   build:
-    # FIXME: This builds with macOS 10.15. Move this to the 11.0 builders when possible. (See: https://github.com/actions/virtual-environments/issues/2486)
-    runs-on:  macos-latest
+    runs-on: macos-latest
+
     steps:
       - uses: actions/checkout@v2
 
+      - name: Prepare
+        run: |
+          brew update
+          cp other/*-iina.rb $(brew --repo homebrew/core)/Formula
+          brew install create-dmg
+
       - name: Install dependencies
-        run: ./other/download_libs.sh
+        run: make depends
 
       - name: Build
-        run: xcodebuild -project iina.xcodeproj -scheme iina CODE_SIGNING_ALLOWED=NO
+        run: make build
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: IINA
+          path: IINA.dmg
