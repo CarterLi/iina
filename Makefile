@@ -7,7 +7,9 @@ depends:
 	cp -r "$(shell brew --prefix mpv-iina)/include/mpv" deps/include/
 	/usr/bin/ruby other/parse_doc.rb
 	/usr/bin/ruby other/change_lib_dependencies.rb "$(shell brew --prefix)" "$(shell brew --prefix mpv-iina)/lib/libmpv.dylib"
-	brew install yt-dlp
+
+yt-dlp:
+	brew upgrade yt-dlp
 	cp "$(realpath $(shell which yt-dlp))" deps/executable/youtube-dl
 
 archive:
