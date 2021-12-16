@@ -1117,7 +1117,7 @@ class PlayerCore: NSObject {
     info.isNetworkResource = !info.currentURL!.isFileURL
 
     if #available(OSX 10.13, *), RemoteCommandController.useSystemMediaControl {
-      NowPlayingInfoManager.updateInfo(withTitle: true)
+      NowPlayingInfoManager.updateInfo(state: .playing, withTitle: true)
     }
 
     // Auto load
@@ -1816,7 +1816,7 @@ class NowPlayingInfoManager {
   static let center = MPNowPlayingInfoCenter.default()
   static private var info = [String: Any]()
 
-  static func updateInfo(withTitle: Bool = false) {
+  static func updateInfo(state: MPNowPlayingPlaybackState? = nil, withTitle: Bool = false) {
     let activePlayer = PlayerCore.lastActive
 
     if withTitle {
@@ -1842,10 +1842,9 @@ class NowPlayingInfoManager {
     info[MPNowPlayingInfoPropertyDefaultPlaybackRate] = 1
 
     center.nowPlayingInfo = info
-  }
 
-  static func updateState(_ state: MPNowPlayingPlaybackState) {
-    center.playbackState = state
-    updateInfo()
+    if state != nil {
+      center.playbackState = state!
+    }
   }
 }
