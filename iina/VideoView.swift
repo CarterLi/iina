@@ -264,6 +264,7 @@ class VideoView: NSView {
 extension VideoView {
   func refreshEdrMode() {
     guard player.mainWindow.loaded else { return }
+    guard player.mpv.fileLoaded else { return }
     guard let displayId = currentDisplay else { return };
     let edrEnabled = requestEdrMode()
     let edrAvailable = edrEnabled != false
