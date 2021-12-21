@@ -43,4 +43,7 @@
 
 + (nullable NSDictionary *)probeVideoInfoForFile:(nonnull NSString *)file;
 
+// HDR
++ (nullable NSDictionary *)getColorSpaceMetadataForFile:(nonnull NSString *)file;
+
 @end
