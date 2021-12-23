@@ -128,7 +128,7 @@ class MPVController: NSObject {
     // - Advanced
 
     // disable internal OSD
-    let useMpvOsd = Preference.bool(for: .useMpvOsd)
+    let useMpvOsd = Preference.bool(for: .enableAdvancedSettings) && Preference.bool(for: .useMpvOsd)
     if !useMpvOsd {
       chkErr(mpv_set_option_string(mpv, MPVOption.OSD.osdLevel, "0"))
     } else {
@@ -285,28 +285,30 @@ class MPVController: NSObject {
             "\(MPVOption.PlaybackControl.abLoopA),\(MPVOption.PlaybackControl.abLoopB)"))
 
     // Set user defined conf dir.
-    if Preference.bool(for: .useUserDefinedConfDir) {
-      if var userConfDir = Preference.string(for: .userDefinedConfDir) {
-        userConfDir = NSString(string: userConfDir).standardizingPath
-        mpv_set_option_string(mpv, "config", "yes")
-        let status = mpv_set_option_string(mpv, MPVOption.ProgramBehavior.configDir, userConfDir)
-        if status < 0 {
-          Utility.showAlert("extra_option.config_folder", arguments: [userConfDir])
-        }
+    if Preference.bool(for: .enableAdvancedSettings),
+       Preference.bool(for: .useUserDefinedConfDir),
+       var userConfDir = Preference.string(for: .userDefinedConfDir) {
+      userConfDir = NSString(string: userConfDir).standardizingPath
+      mpv_set_option_string(mpv, "config", "yes")
+      let status = mpv_set_option_string(mpv, MPVOption.ProgramBehavior.configDir, userConfDir)
+      if status < 0 {
+        Utility.showAlert("extra_option.config_folder", arguments: [userConfDir])
       }
     }
 
     // Set user defined options.
-    if let userOptions = Preference.value(for: .userOptions) as? [[String]] {
-      userOptions.forEach { op in
-        let status = mpv_set_option_string(mpv, op[0], op[1])
-        if status < 0 {
-          Utility.showAlert("extra_option.error", arguments:
-            [op[0], op[1], status])
+    if Preference.bool(for: .enableAdvancedSettings) {
+      if let userOptions = Preference.value(for: .userOptions) as? [[String]] {
+        userOptions.forEach { op in
+          let status = mpv_set_option_string(mpv, op[0], op[1])
+          if status < 0 {
+            Utility.showAlert("extra_option.error", arguments:
+              [op[0], op[1], status])
+          }
         }
+      } else {
+        Utility.showAlert("extra_option.cannot_read")
       }
-    } else {
-      Utility.showAlert("extra_option.cannot_read")
     }
 
     // Load external scripts
