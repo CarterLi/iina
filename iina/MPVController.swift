@@ -378,6 +378,14 @@ class MPVController: NSObject {
     }
   }
 
+  func mpvUninitRendering() {
+    guard let mpvRenderContext = mpvRenderContext else { return }
+    lockAndSetOpenGLContext()
+    defer { unlockOpenGLContext() }
+    mpv_render_context_set_update_callback(mpvRenderContext, nil, nil)
+    mpv_render_context_free(mpvRenderContext)
+  }
+
   /// Lock the OpenGL context associated with the mpv renderer and set it to be the current context for this thread.
   ///
   /// This method is needed to meet this requirement from `mpv/render.h`:
@@ -397,12 +405,6 @@ class MPVController: NSObject {
   /// Unlock the OpenGL context associated with the mpv renderer.
   func unlockOpenGLContext() {
     CGLUnlockContext(openGLContext)
-  }
-
-  func mpvUninitRendering() {
-    guard let mpvRenderContext = mpvRenderContext else { return }
-    mpv_render_context_set_update_callback(mpvRenderContext, nil, nil)
-    mpv_render_context_free(mpvRenderContext)
   }
 
   func mpvReportSwap() {

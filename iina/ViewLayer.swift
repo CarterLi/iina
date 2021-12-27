@@ -12,8 +12,6 @@ import OpenGL.GL3
 
 class ViewLayer: CAOpenGLLayer {
 
-  var context: CGLContextObj! = nil
-
   weak var videoView: VideoView!
 
   lazy var mpvGLQueue = DispatchQueue(label: "com.colliderli.iina.mpvgl", qos: .userInteractive)
@@ -165,7 +163,7 @@ class ViewLayer: CAOpenGLLayer {
           ]
           mpv_render_context_render(renderContext, &params);
         }
-        CGLUnlockContext(context)
+        videoView.player.mpv?.unlockOpenGLContext()
       }
       needsMPVRender = false
     }
