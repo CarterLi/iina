@@ -8,10 +8,6 @@ depends:
 	/usr/bin/ruby other/parse_doc.rb
 	/usr/bin/ruby other/change_lib_dependencies.rb "$(shell brew --prefix)" "$(shell brew --prefix mpv-iina)/lib/libmpv.dylib"
 
-yt-dlp:
-	brew upgrade yt-dlp
-	cp "$(realpath $(shell which yt-dlp))" deps/executable/youtube-dl
-
 archive:
 	xcodebuild -project iina.xcodeproj -scheme iina -config Release -archivePath ./archive archive
 
