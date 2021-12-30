@@ -260,6 +260,9 @@ struct Preference {
     /** Use mpv's OSD (bool) */
     static let useMpvOsd = Key("useMpvOsd")
 
+    /** Disable ICC profile (bool) */
+    static let disableIccProfile = Key("disableIccProfile")
+
     /** Log to log folder (bool) */
     static let enableLogging = Key("enableLogging")
     static let logLevel = Key("logLevel")
@@ -784,6 +787,7 @@ struct Preference {
 
     .enableAdvancedSettings: false,
     .useMpvOsd: false,
+    .disableIccProfile: false,
     .enableLogging: false,
     .logLevel: Logger.Level.debug.rawValue,
     .displayKeyBindingRawValues: false,
