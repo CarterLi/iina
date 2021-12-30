@@ -155,8 +155,6 @@
 		84FBF23E1EF06A90003EA491 /* ThumbnailCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBF23D1EF06A90003EA491 /* ThumbnailCache.swift */; };
 		8F49C36E213EFB7E0076C4F9 /* MiniPlayerWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F49C370213EFB7E0076C4F9 /* MiniPlayerWindowController.xib */; };
 		9E47DAC01E3CFA6D00457420 /* DurationDisplayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E47DABF1E3CFA6D00457420 /* DurationDisplayTextField.swift */; };
-		AD183C3A2768376A00758D8A /* liblua.5.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD183C192768376900758D8A /* liblua.5.1.dylib */; };
-		AD183C3B2768376A00758D8A /* liblua.5.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = AD183C192768376900758D8A /* liblua.5.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		AD183C3C2768376A00758D8A /* libjpeg.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD183C1A2768376900758D8A /* libjpeg.9.dylib */; };
 		AD183C3D2768376A00758D8A /* libjpeg.9.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = AD183C1A2768376900758D8A /* libjpeg.9.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		AD183C3E2768376A00758D8A /* libavformat.58.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD183C1B2768376900758D8A /* libavformat.58.dylib */; };
@@ -221,6 +219,8 @@
 		AD183C792768376B00758D8A /* libavutil.56.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = AD183C382768376A00758D8A /* libavutil.56.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		AD183C7A2768376B00758D8A /* libcrypto.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD183C392768376A00758D8A /* libcrypto.3.dylib */; };
 		AD183C7B2768376B00758D8A /* libcrypto.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = AD183C392768376A00758D8A /* libcrypto.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		AD4353A6277D7871000F5C7B /* libluajit-5.1.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4353A5277D7871000F5C7B /* libluajit-5.1.2.dylib */; };
+		AD4353A7277D7871000F5C7B /* libluajit-5.1.2.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = AD4353A5277D7871000F5C7B /* libluajit-5.1.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		B4E446E825CB53920069F06E /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = B4E446E725CB53920069F06E /* PromiseKit */; };
 		B4E446F225CB53FF0069F06E /* Gzip in Frameworks */ = {isa = PBXBuildFile; productRef = B4E446F125CB53FF0069F06E /* Gzip */; };
 		B4E446F725CB54EF0069F06E /* Mustache in Frameworks */ = {isa = PBXBuildFile; productRef = B4E446F625CB54EF0069F06E /* Mustache */; };
@@ -345,11 +345,11 @@
 				AD183C692768376B00758D8A /* libharfbuzz.0.dylib in Embed Libraries */,
 				AD183C3F2768376A00758D8A /* libavformat.58.dylib in Embed Libraries */,
 				AD183C4F2768376A00758D8A /* libdav1d.5.dylib in Embed Libraries */,
-				AD183C3B2768376A00758D8A /* liblua.5.1.dylib in Embed Libraries */,
 				AD183C4D2768376A00758D8A /* libb2.1.dylib in Embed Libraries */,
 				AD183C752768376B00758D8A /* libavcodec.58.dylib in Embed Libraries */,
 				AD183C772768376B00758D8A /* libmujs.dylib in Embed Libraries */,
 				AD183C712768376B00758D8A /* liblz4.1.dylib in Embed Libraries */,
+				AD4353A7277D7871000F5C7B /* libluajit-5.1.2.dylib in Embed Libraries */,
 				AD183C732768376B00758D8A /* libintl.8.dylib in Embed Libraries */,
 				AD183C652768376A00758D8A /* libmpv.1.dylib in Embed Libraries */,
 				AD183C572768376A00758D8A /* libglib-2.0.0.dylib in Embed Libraries */,
@@ -1114,7 +1114,6 @@
 		9DB9ED5C20889D66006B1492 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/SubChooseViewController.strings; sourceTree = "<group>"; };
 		9E47DABF1E3CFA6D00457420 /* DurationDisplayTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DurationDisplayTextField.swift; sourceTree = "<group>"; };
 		9E63CAB61E3F7D0E00EA66C9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainMenu.strings; sourceTree = "<group>"; };
-		AD183C192768376900758D8A /* liblua.5.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liblua.5.1.dylib; path = deps/lib/liblua.5.1.dylib; sourceTree = "<group>"; };
 		AD183C1A2768376900758D8A /* libjpeg.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libjpeg.9.dylib; path = deps/lib/libjpeg.9.dylib; sourceTree = "<group>"; };
 		AD183C1B2768376900758D8A /* libavformat.58.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libavformat.58.dylib; path = deps/lib/libavformat.58.dylib; sourceTree = "<group>"; };
 		AD183C1C2768376900758D8A /* liblcms2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liblcms2.2.dylib; path = deps/lib/liblcms2.2.dylib; sourceTree = "<group>"; };
@@ -1147,6 +1146,7 @@
 		AD183C372768376A00758D8A /* libmujs.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmujs.dylib; path = deps/lib/libmujs.dylib; sourceTree = "<group>"; };
 		AD183C382768376A00758D8A /* libavutil.56.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libavutil.56.dylib; path = deps/lib/libavutil.56.dylib; sourceTree = "<group>"; };
 		AD183C392768376A00758D8A /* libcrypto.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.3.dylib; path = deps/lib/libcrypto.3.dylib; sourceTree = "<group>"; };
+		AD4353A5277D7871000F5C7B /* libluajit-5.1.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libluajit-5.1.2.dylib"; path = "deps/lib/libluajit-5.1.2.dylib"; sourceTree = "<group>"; };
 		B305513A2190B0C600D3F70E /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/MiniPlayerWindowController.strings; sourceTree = "<group>"; };
 		B3066F5F1F161538004D7559 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InitialWindowController.strings; sourceTree = "<group>"; };
 		B35E0A072107C0E500453AA7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/PrefUtilsViewController.strings; sourceTree = "<group>"; };
@@ -1437,6 +1437,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD4353A6277D7871000F5C7B /* libluajit-5.1.2.dylib in Frameworks */,
 				AD183C462768376A00758D8A /* libarchive.13.dylib in Frameworks */,
 				AD183C482768376A00758D8A /* libavdevice.58.dylib in Frameworks */,
 				AD183C742768376B00758D8A /* libavcodec.58.dylib in Frameworks */,
@@ -1467,7 +1468,6 @@
 				AD183C4A2768376A00758D8A /* libuchardet.0.dylib in Frameworks */,
 				AD183C5A2768376A00758D8A /* libpcre.1.dylib in Frameworks */,
 				AD183C682768376B00758D8A /* libharfbuzz.0.dylib in Frameworks */,
-				AD183C3A2768376A00758D8A /* liblua.5.1.dylib in Frameworks */,
 				AD183C602768376A00758D8A /* libfreetype.6.dylib in Frameworks */,
 				AD183C6C2768376B00758D8A /* libfontconfig.1.dylib in Frameworks */,
 				AD183C562768376A00758D8A /* libglib-2.0.0.dylib in Frameworks */,
@@ -1586,6 +1586,7 @@
 		848290731D95978100C3C76C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD4353A5277D7871000F5C7B /* libluajit-5.1.2.dylib */,
 				AD183C1F2768376900758D8A /* libarchive.13.dylib */,
 				AD183C242768376900758D8A /* libass.9.dylib */,
 				AD183C362768376A00758D8A /* libavcodec.58.dylib */,
@@ -1606,7 +1607,6 @@
 				AD183C352768376A00758D8A /* libintl.8.dylib */,
 				AD183C1A2768376900758D8A /* libjpeg.9.dylib */,
 				AD183C1C2768376900758D8A /* liblcms2.2.dylib */,
-				AD183C192768376900758D8A /* liblua.5.1.dylib */,
 				AD183C342768376A00758D8A /* liblz4.1.dylib */,
 				AD183C252768376900758D8A /* liblzma.5.dylib */,
 				AD183C2E2768376A00758D8A /* libmpv.1.dylib */,
