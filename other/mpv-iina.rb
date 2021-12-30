@@ -20,7 +20,7 @@ class MpvIina < Formula
   depends_on "libarchive"
   depends_on "libass"
   depends_on "little-cms2"
-  depends_on "lua@5.1"
+  depends_on "luajit-openresty"
   depends_on "libbluray"
   depends_on "mujs"
   depends_on "uchardet"
@@ -35,8 +35,8 @@ class MpvIina < Formula
 
     # libarchive is keg-only
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["libarchive"].opt_lib/"pkgconfig"
-    # lua@5.1 is key-only
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["lua@5.1"].opt_lib/"pkgconfig"
+    # luajit-openresty is key-only
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["luajit-openresty"].opt_lib/"pkgconfig"
 
     ENV["CFLAGS"] = "-O3 -flto"
     ENV["LDFLAGS"] = "-flto"
@@ -56,6 +56,7 @@ class MpvIina < Formula
       --datadir=#{pkgshare}
       --mandir=#{man}
       --docdir=#{doc}
+      --lua=luajit
     ]
 
     system Formula["python@3.9"].opt_bin/"python3", "bootstrap.py"
