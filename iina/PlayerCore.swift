@@ -131,7 +131,7 @@ class PlayerCore: NSObject {
 
   var displayOSD: Bool = true
 
-  var isMpvTerminated: Bool = false
+  var isMpvTerminating: Bool = false
 
   var isInMiniPlayer = false
   var switchedToMiniPlayerManually = false
@@ -377,14 +377,14 @@ class PlayerCore: NSObject {
 
   // Terminate mpv
   func terminateMPV(sendQuit: Bool = true) {
-    guard !isMpvTerminated else { return }
+    guard !isMpvTerminating else { return }
+    isMpvTerminating = true
     savePlaybackPosition()
     invalidateTimer()
     uninitVideo()
     if sendQuit {
       mpv.mpvQuit()
     }
-    isMpvTerminated = true
   }
 
   /// Wait until this player core has been terminated.
@@ -1363,7 +1363,9 @@ class PlayerCore: NSObject {
 
   func syncUI(_ option: SyncUIOption) {
     // if window not loaded, ignore
-    guard mainWindow.loaded else { return }
+    // No need for updating the UI if currently terminating mpv. Requesting property values from mpv
+    // can cause crashes depending upon how far into the asynchronous termination sequence mpv is.
+    guard mainWindow.loaded, !isMpvTerminating else { return }
     Logger.log("Syncing UI \(option)", level: .verbose, subsystem: subsystem)
 
     switch option {

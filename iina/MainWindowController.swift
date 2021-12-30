@@ -1089,7 +1089,7 @@ class MainWindowController: PlayerWindowController {
       }
     }
     // stop playing
-    if !player.isMpvTerminated {
+    if !player.isMpvTerminating {
       if case .fullscreen(legacy: true, priorWindowedFrame: _) = fsState {
         restoreDockSettings()
       }
