@@ -28,5 +28,5 @@
 /* Class = "NSButtonCell"; title = "Use config directory:"; ObjectID = "ehL-8Y-G8h"; */
 "ehL-8Y-G8h.title" = "使用配置目录:";
 
-/* Class = "NSButtonCell"; title = "Disable ICC profile"; ObjectID = "I3v-gt-EO9"; */
-"I3v-gt-EO9.title" = "禁用ICC色彩特性文件";
+/* Class = "NSButtonCell"; title = "Use mpv's OSD"; ObjectID = "phK-g9-Vbg"; */
+"phK-g9-Vbg.title" = "使用 mpv 的 OSD";

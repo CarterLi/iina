@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19455" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19455"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -27,11 +27,11 @@
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="pxc-7C-SGP"/>
         <customView id="gZf-gF-XoY">
-            <rect key="frame" x="0.0" y="0.0" width="444" height="208"/>
+            <rect key="frame" x="0.0" y="0.0" width="444" height="350"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField identifier="SectionTitleVideo" horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2BH-mP-kfr">
-                    <rect key="frame" x="-2" y="184" width="46" height="16"/>
+                    <rect key="frame" x="-2" y="326" width="46" height="16"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Video:" id="m5P-5f-5uo">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -39,7 +39,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="paR-ax-h5M">
-                    <rect key="frame" x="118" y="184" width="122" height="16"/>
+                    <rect key="frame" x="118" y="326" width="122" height="16"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Number of threads:" id="50C-1R-wlJ">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -47,7 +47,7 @@
                     </textFieldCell>
                 </textField>
                 <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NZA-64-tXh">
-                    <rect key="frame" x="246" y="181" width="58" height="21"/>
+                    <rect key="frame" x="246" y="323" width="58" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="58" id="GLI-3U-bmm"/>
                     </constraints>
@@ -68,7 +68,7 @@
                     </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kas-7q-TbK">
-                    <rect key="frame" x="312" y="184" width="92" height="14"/>
+                    <rect key="frame" x="312" y="326" width="92" height="14"/>
                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Default: 0 (Auto)" id="bxW-np-SGm">
                         <font key="font" metaFont="label" size="11"/>
                         <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
@@ -76,7 +76,7 @@
                     </textFieldCell>
                 </textField>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EWs-Ib-pVZ">
-                    <rect key="frame" x="243" y="153" width="127" height="25"/>
+                    <rect key="frame" x="243" y="287" width="127" height="25"/>
                     <constraints>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="P27-F4-Ogg"/>
                     </constraints>
@@ -97,7 +97,7 @@
                     </connections>
                 </popUpButton>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="0Re-PY-hmC">
-                    <rect key="frame" x="118" y="142" width="328" height="14"/>
+                    <rect key="frame" x="118" y="276" width="328" height="14"/>
                     <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Label" id="n3r-mP-f8V">
                         <font key="font" metaFont="label" size="11"/>
                         <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
@@ -105,7 +105,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4rB-d2-drE">
-                    <rect key="frame" x="118" y="160" width="122" height="16"/>
+                    <rect key="frame" x="118" y="294" width="122" height="16"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Hardware decoder:" id="nwg-2K-G2G">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -113,7 +113,7 @@
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xXS-nP-Chk">
-                    <rect key="frame" x="118" y="113" width="156" height="18"/>
+                    <rect key="frame" x="118" y="247" width="156" height="18"/>
                     <buttonCell key="cell" type="check" title="Force dedicated GPU" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="YUr-aJ-xfC">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -123,7 +123,7 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="40Z-9R-jw0">
-                    <rect key="frame" x="118" y="82" width="328" height="28"/>
+                    <rect key="frame" x="118" y="216" width="328" height="28"/>
                     <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Always use the dedicated GPU for rendering (if it exists). This can improve performance but may reduce battery life." id="gCv-sJ-uQJ">
                         <font key="font" metaFont="label" size="11"/>
                         <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
@@ -131,7 +131,7 @@
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ota-uw-6BI">
-                    <rect key="frame" x="118" y="53" width="215" height="18"/>
+                    <rect key="frame" x="118" y="187" width="215" height="18"/>
                     <buttonCell key="cell" type="check" title="Match refresh rate in fullscreen" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="OvP-TR-cOd">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -141,10 +141,47 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="TSW-aG-h9J">
-                    <rect key="frame" x="118" y="8" width="328" height="42"/>
+                    <rect key="frame" x="118" y="142" width="328" height="42"/>
                     <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" id="Lfo-JP-9et">
                         <font key="font" metaFont="label" size="11"/>
                         <string key="title">Switch to a matching refresh rate (if there is any) when the player goes fullscreen. This can eliminate stuttering, and, on some external displays, enable frame interpolation.</string>
+                        <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H9a-N4-xDt">
+                    <rect key="frame" x="118" y="113" width="124" height="18"/>
+                    <buttonCell key="cell" type="check" title="Load ICC profile" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="3g4-jW-uJd">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="pxc-7C-SGP" name="value" keyPath="values.loadIccProfile" id="V7h-9X-mbz"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="IQ8-K4-5CX">
+                    <rect key="frame" x="118" y="82" width="328" height="28"/>
+                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Load the ICC profile for current display and use it to transform video RGB to screen output. ( Only for SDR mode )" id="M2M-of-gjd">
+                        <font key="font" metaFont="label" size="11"/>
+                        <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aXg-u5-fHH">
+                    <rect key="frame" x="118" y="53" width="221" height="18"/>
+                    <buttonCell key="cell" type="check" title="Use mastering display metadata" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="bQI-md-h8I">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="pxc-7C-SGP" name="value" keyPath="values.useMasteringDisplayMetadata" id="ohy-so-UGS"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Vr6-db-jRg">
+                    <rect key="frame" x="118" y="8" width="328" height="42"/>
+                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" id="y7w-PM-3Re">
+                        <font key="font" metaFont="label" size="11"/>
+                        <string key="title">Load primaries / trc info from mastering display metadata if available. Unchecking this option effectively disables using Display-P3 colorspace. ( Only for HDR mode )</string>
                         <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -157,18 +194,28 @@
                 <constraint firstItem="0Re-PY-hmC" firstAttribute="top" secondItem="4rB-d2-drE" secondAttribute="bottom" constant="4" id="5Mm-wm-VFG"/>
                 <constraint firstItem="Ota-uw-6BI" firstAttribute="leading" secondItem="40Z-9R-jw0" secondAttribute="leading" id="6XV-jm-sBT"/>
                 <constraint firstItem="40Z-9R-jw0" firstAttribute="top" secondItem="xXS-nP-Chk" secondAttribute="bottom" constant="4" id="87O-GK-HSl"/>
+                <constraint firstAttribute="trailing" secondItem="IQ8-K4-5CX" secondAttribute="trailing" id="ASv-Wn-ieW"/>
+                <constraint firstItem="H9a-N4-xDt" firstAttribute="top" secondItem="TSW-aG-h9J" secondAttribute="bottom" constant="12" id="CZG-Fo-gfL"/>
                 <constraint firstItem="4rB-d2-drE" firstAttribute="leading" secondItem="paR-ax-h5M" secondAttribute="leading" id="Can-oM-yLm"/>
                 <constraint firstItem="EWs-Ib-pVZ" firstAttribute="leading" secondItem="4rB-d2-drE" secondAttribute="trailing" constant="8" id="Fj7-lr-KGg"/>
                 <constraint firstAttribute="trailing" secondItem="0Re-PY-hmC" secondAttribute="trailing" id="HJH-5L-Dd4"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ota-uw-6BI" secondAttribute="trailing" constant="12" id="Ije-hx-B8b"/>
                 <constraint firstItem="2BH-mP-kfr" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="gZf-gF-XoY" secondAttribute="leading" constant="120" id="KBf-6v-pL9"/>
+                <constraint firstItem="Vr6-db-jRg" firstAttribute="top" secondItem="aXg-u5-fHH" secondAttribute="bottom" constant="4" id="LPp-xT-zE5"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xXS-nP-Chk" secondAttribute="trailing" constant="12" id="QNu-hr-TdO"/>
+                <constraint firstItem="aXg-u5-fHH" firstAttribute="top" secondItem="IQ8-K4-5CX" secondAttribute="bottom" constant="12" id="THu-X5-8Is"/>
                 <constraint firstItem="TSW-aG-h9J" firstAttribute="leading" secondItem="Ota-uw-6BI" secondAttribute="leading" id="TQY-eJ-m7f"/>
                 <constraint firstAttribute="trailing" secondItem="TSW-aG-h9J" secondAttribute="trailing" id="TkD-AY-QZP"/>
+                <constraint firstItem="Vr6-db-jRg" firstAttribute="leading" secondItem="aXg-u5-fHH" secondAttribute="leading" id="UEc-Cp-p16"/>
+                <constraint firstItem="IQ8-K4-5CX" firstAttribute="top" secondItem="H9a-N4-xDt" secondAttribute="bottom" constant="4" id="W29-Gj-v7X"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kas-7q-TbK" secondAttribute="trailing" constant="20" symbolic="YES" id="XnT-jM-uWw"/>
                 <constraint firstItem="paR-ax-h5M" firstAttribute="top" secondItem="2BH-mP-kfr" secondAttribute="top" id="ZwF-7T-SvE"/>
+                <constraint firstAttribute="trailing" secondItem="Vr6-db-jRg" secondAttribute="trailing" id="a9m-u3-bbY"/>
                 <constraint firstItem="xXS-nP-Chk" firstAttribute="leading" secondItem="0Re-PY-hmC" secondAttribute="leading" id="aYZ-dq-yBE"/>
+                <constraint firstAttribute="bottom" secondItem="Vr6-db-jRg" secondAttribute="bottom" constant="8" id="c0n-jo-IQx"/>
                 <constraint firstItem="kas-7q-TbK" firstAttribute="leading" secondItem="NZA-64-tXh" secondAttribute="trailing" constant="10" id="c73-Gh-U6L"/>
+                <constraint firstItem="IQ8-K4-5CX" firstAttribute="leading" secondItem="H9a-N4-xDt" secondAttribute="leading" id="cpx-2e-hcB"/>
+                <constraint firstItem="aXg-u5-fHH" firstAttribute="leading" secondItem="IQ8-K4-5CX" secondAttribute="leading" id="ezd-iH-x9J"/>
                 <constraint firstItem="xXS-nP-Chk" firstAttribute="top" secondItem="0Re-PY-hmC" secondAttribute="bottom" constant="12" id="fO3-5j-FCq"/>
                 <constraint firstItem="paR-ax-h5M" firstAttribute="leading" secondItem="gZf-gF-XoY" secondAttribute="leading" constant="120" id="fWo-4I-DAC"/>
                 <constraint firstItem="NZA-64-tXh" firstAttribute="baseline" secondItem="paR-ax-h5M" secondAttribute="baseline" id="hly-ga-NBA"/>
@@ -178,20 +225,20 @@
                 <constraint firstItem="2BH-mP-kfr" firstAttribute="leading" secondItem="gZf-gF-XoY" secondAttribute="leading" id="pDP-Rm-tDg"/>
                 <constraint firstItem="0Re-PY-hmC" firstAttribute="leading" secondItem="4rB-d2-drE" secondAttribute="leading" id="q9a-bj-3IP"/>
                 <constraint firstItem="TSW-aG-h9J" firstAttribute="top" secondItem="Ota-uw-6BI" secondAttribute="bottom" constant="4" id="qAU-0r-e5f"/>
-                <constraint firstItem="4rB-d2-drE" firstAttribute="top" secondItem="paR-ax-h5M" secondAttribute="bottom" constant="8" id="rCv-37-pHD"/>
+                <constraint firstItem="4rB-d2-drE" firstAttribute="top" secondItem="paR-ax-h5M" secondAttribute="bottom" constant="16" id="rCv-37-pHD"/>
                 <constraint firstItem="kas-7q-TbK" firstAttribute="baseline" secondItem="paR-ax-h5M" secondAttribute="baseline" id="rWF-ZF-Tlb"/>
                 <constraint firstAttribute="trailing" secondItem="40Z-9R-jw0" secondAttribute="trailing" id="u8t-cI-LR5"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EWs-Ib-pVZ" secondAttribute="trailing" constant="20" symbolic="YES" id="uSA-lp-egl"/>
-                <constraint firstAttribute="bottom" secondItem="TSW-aG-h9J" secondAttribute="bottom" constant="8" id="w87-4D-FL9"/>
+                <constraint firstItem="H9a-N4-xDt" firstAttribute="leading" secondItem="TSW-aG-h9J" secondAttribute="leading" id="ybt-SY-BgR"/>
             </constraints>
-            <point key="canvasLocation" x="783" y="306.5"/>
+            <point key="canvasLocation" x="783" y="394.5"/>
         </customView>
         <customView id="bsP-Kc-xXR">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="187"/>
+            <rect key="frame" x="0.0" y="0.0" width="480" height="192"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField identifier="SectionTitleAudio" horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ig-J7-VYp">
-                    <rect key="frame" x="-2" y="163" width="46" height="16"/>
+                    <rect key="frame" x="-2" y="168" width="46" height="16"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Audio:" id="sV5-dL-MUt">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -291,7 +338,7 @@
                     </connections>
                 </button>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="GmR-Si-ivP">
-                    <rect key="frame" x="118" y="159" width="143" height="21"/>
+                    <rect key="frame" x="118" y="167" width="143" height="18"/>
                     <buttonCell key="cell" type="check" title="Initial volume:" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="g4c-vG-URh">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -301,7 +348,7 @@
                     </connections>
                 </button>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tPo-qr-GqN">
-                    <rect key="frame" x="269" y="157" width="58" height="21"/>
+                    <rect key="frame" x="269" y="165" width="58" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="58" id="OFp-VC-TGz"/>
                     </constraints>
@@ -435,7 +482,7 @@
                 <constraint firstItem="qQz-rr-NFX" firstAttribute="leading" secondItem="JFX-OT-X7j" secondAttribute="leading" id="o3R-T9-bFc"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SEM-Qm-KeU" secondAttribute="trailing" constant="12" id="o5t-2S-zuj"/>
                 <constraint firstItem="GmR-Si-ivP" firstAttribute="top" secondItem="0Ig-J7-VYp" secondAttribute="top" id="o7u-TU-ZIO"/>
-                <constraint firstItem="JFX-OT-X7j" firstAttribute="top" secondItem="GmR-Si-ivP" secondAttribute="bottom" constant="8" id="qjh-2X-tg8"/>
+                <constraint firstItem="JFX-OT-X7j" firstAttribute="top" secondItem="GmR-Si-ivP" secondAttribute="bottom" constant="16" id="qjh-2X-tg8"/>
                 <constraint firstItem="Min-k4-E1V" firstAttribute="leading" secondItem="V2U-ze-ZXE" secondAttribute="trailing" constant="8" id="sU8-FC-tAa"/>
                 <constraint firstItem="Ld5-Mm-4Pt" firstAttribute="leading" secondItem="qQz-rr-NFX" secondAttribute="trailing" constant="8" id="sf9-lW-dIs"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2Y8-fb-z9V" secondAttribute="trailing" constant="12" id="urz-59-vwm"/>

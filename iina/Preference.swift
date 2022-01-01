@@ -150,6 +150,8 @@ struct Preference {
     static let hardwareDecoder = Key("hardwareDecoder")
     static let forceDedicatedGPU = Key("forceDedicatedGPU")
     static let matchRefreshRate = Key("matchRefreshRate")
+    static let loadIccProfile = Key("loadIccProfile")
+    static let useMasteringDisplayMetadata = Key("useMasteringDisplayMetadata")
 
     static let audioThreads = Key("audioThreads")
     static let audioLanguage = Key("audioLanguage")
@@ -259,9 +261,6 @@ struct Preference {
 
     /** Use mpv's OSD (bool) */
     static let useMpvOsd = Key("useMpvOsd")
-
-    /** Disable ICC profile (bool) */
-    static let disableIccProfile = Key("disableIccProfile")
 
     /** Log to log folder (bool) */
     static let enableLogging = Key("enableLogging")
@@ -728,6 +727,8 @@ struct Preference {
     .hardwareDecoder: HardwareDecoderOption.auto.rawValue,
     .forceDedicatedGPU: false,
     .matchRefreshRate: false,
+    .loadIccProfile: true,
+    .useMasteringDisplayMetadata: true,
     .audioThreads: 0,
     .audioLanguage: "",
     .maxVolume: 100,
@@ -787,7 +788,6 @@ struct Preference {
 
     .enableAdvancedSettings: false,
     .useMpvOsd: false,
-    .disableIccProfile: false,
     .enableLogging: false,
     .logLevel: Logger.Level.debug.rawValue,
     .displayKeyBindingRawValues: false,
