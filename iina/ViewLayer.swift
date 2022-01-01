@@ -101,15 +101,20 @@ class ViewLayer: CAOpenGLLayer {
     let mpv = videoView.player.mpv!
     needsMPVRender = false
 
-    videoView.uninitLock.lock()
-
-    guard !videoView.isUninited else {
-      videoView.uninitLock.unlock()
-      return
-    }
-
+    // Previously uninitLock was locked first. This caused a deadlock when locking was added to the
+    // other draw method in that same order. Apple documentation is unclear but one example from
+    // Apple has a comment indicating the OpenGL context is set before calling this method. It may
+    // already be locked as well since switching the order of locking solved the deadlock.
+    // Continuing to lock and set the context just to be sure.
     CGLLockContext(ctx)
     CGLSetCurrentContext(ctx)
+    videoView.uninitLock.lock()
+    defer {
+      videoView.uninitLock.unlock()
+      CGLUnlockContext(ctx)
+    }
+
+    guard !videoView.isUninited else { return }
 
     glClear(GLbitfield(GL_COLOR_BUFFER_BIT))
 
@@ -143,9 +148,6 @@ class ViewLayer: CAOpenGLLayer {
       }
     }
     glFlush()
-
-    CGLUnlockContext(ctx)
-    videoView.uninitLock.unlock()
   }
 
   func suspend() {
@@ -168,10 +170,15 @@ class ViewLayer: CAOpenGLLayer {
       return
     }
     if needsMPVRender {
+      // Order of locking must match the other draw method.
+      videoView.player.mpv?.lockAndSetOpenGLContext()
       videoView.uninitLock.lock()
+      defer {
+        videoView.uninitLock.unlock()
+        videoView.player.mpv?.unlockOpenGLContext()
+      }
       // draw(inCGLContext:) is not called, needs a skip render
       if !videoView.isUninited, let renderContext = videoView.player.mpv?.mpvRenderContext {
-        videoView.player.mpv?.lockAndSetOpenGLContext()
         var skip: CInt = 1
         withUnsafeMutablePointer(to: &skip) { skip in
           var params: [mpv_render_param] = [
@@ -180,9 +187,7 @@ class ViewLayer: CAOpenGLLayer {
           ]
           mpv_render_context_render(renderContext, &params);
         }
-        videoView.player.mpv?.unlockOpenGLContext()
       }
-      videoView.uninitLock.unlock()
       needsMPVRender = false
     }
   }
