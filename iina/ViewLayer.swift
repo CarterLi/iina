@@ -163,7 +163,6 @@ class ViewLayer: CAOpenGLLayer {
           ]
           mpv_render_context_render(renderContext, &params);
         }
-        videoView.player.mpv?.unlockOpenGLContext()
       }
       needsMPVRender = false
     }
