@@ -12,6 +12,18 @@
 
 * HDR playback
 
+## Planed features
+
+* Danmaku
+
+## About youtube-dl
+
+We no longer embed the outdated youtube-dl. Users must install `yt-dlp` manually for playing network resources.
+
+```sh
+$ brew install yt-dlp
+```
+
 ## Build
 
 ```bash

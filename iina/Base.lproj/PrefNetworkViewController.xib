@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,11 +22,11 @@
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="KNf-nq-d77"/>
         <customView id="dQy-nE-EW3">
-            <rect key="frame" x="0.0" y="0.0" width="476" height="78"/>
+            <rect key="frame" x="0.0" y="-2" width="476" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField identifier="SectionTitleCache" horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2xw-S1-tBi">
-                    <rect key="frame" x="-2" y="54" width="50" height="16"/>
+                    <rect key="frame" x="-2" y="56" width="50" height="16"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Cache:" id="LNk-io-MM7">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -34,7 +34,7 @@
                     </textFieldCell>
                 </textField>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="1Nn-zY-Z5N">
-                    <rect key="frame" x="118" y="54" width="103" height="18"/>
+                    <rect key="frame" x="118" y="55" width="107" height="18"/>
                     <buttonCell key="cell" type="check" title="Enable cache" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="fpV-al-bn7">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -190,13 +190,13 @@
                     </textFieldCell>
                 </textField>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qEG-Qx-abX">
-                    <rect key="frame" x="322" y="2" width="85" height="25"/>
+                    <rect key="frame" x="321" y="1" width="87" height="25"/>
                     <constraints>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="63b-Mz-B7s"/>
                     </constraints>
                     <popUpButtonCell key="cell" type="push" title="Auto" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="aNr-lv-K0r" id="aQI-Yi-iRl">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="menu"/>
                         <menu key="menu" id="wKy-No-ulG">
                             <items>
                                 <menuItem title="Auto" state="on" id="aNr-lv-K0r"/>
@@ -219,7 +219,7 @@
                     </textFieldCell>
                 </textField>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JPi-nK-njc">
-                    <rect key="frame" x="245" y="52" width="199" height="21"/>
+                    <rect key="frame" x="244" y="52" width="200" height="21"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="ah9-Ow-96R">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -242,7 +242,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LJ5-Mm-ydF">
-                    <rect key="frame" x="201" y="55" width="42" height="16"/>
+                    <rect key="frame" x="201" y="55" width="41" height="16"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="http://" id="WTb-HK-6vU">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
@@ -280,11 +280,11 @@
             <point key="canvasLocation" x="-385" y="514"/>
         </customView>
         <customView id="GHK-tq-Ssh">
-            <rect key="frame" x="0.0" y="0.0" width="444" height="136"/>
+            <rect key="frame" x="0.0" y="0.0" width="444" height="184"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField identifier="SectionTitleYtdl" horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mRg-vm-guk">
-                    <rect key="frame" x="-2" y="112" width="80" height="16"/>
+                    <rect key="frame" x="-2" y="160" width="80" height="16"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="youtube-dl:" id="1Ex-0X-pjo">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -308,8 +308,8 @@
                     </connections>
                 </textField>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="iwI-aJ-5PQ">
-                    <rect key="frame" x="118" y="96" width="133" height="34"/>
-                    <buttonCell key="cell" type="check" title="Enable youtube-dl" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="cyH-Md-FAD">
+                    <rect key="frame" x="118" y="157" width="107" height="20"/>
+                    <buttonCell key="cell" type="check" title="Enable yt-dlp" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="cyH-Md-FAD">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -337,7 +337,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aSG-qR-qgc">
-                    <rect key="frame" x="118" y="74" width="156" height="16"/>
+                    <rect key="frame" x="118" y="86" width="156" height="16"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Custom youtube-dl path:" id="2qf-cC-Lfi">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -345,8 +345,8 @@
                     </textFieldCell>
                 </textField>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ePv-ZR-5fY">
-                    <rect key="frame" x="280" y="71" width="164" height="21"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="/usr/local/bin" drawsBackground="YES" id="Smc-bL-Dvq">
+                    <rect key="frame" x="280" y="83" width="164" height="21"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="/path/to/yt-dlp" drawsBackground="YES" id="Smc-bL-Dvq">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -362,18 +362,15 @@
                     </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YLm-l6-HXj">
-                    <rect key="frame" x="118" y="52" width="328" height="14"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="14" id="74z-l3-NRT"/>
-                    </constraints>
-                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="IINA will search youtube-dl in this folder. Restart needed." id="YqE-yV-BvQ">
+                    <rect key="frame" x="118" y="52" width="328" height="28"/>
+                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="IINA will also search yt-dlp in this folder if provided. Restart needed." id="YqE-yV-BvQ">
                         <font key="font" metaFont="message" size="11"/>
                         <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1hj-6T-EBw">
-                    <rect key="frame" x="255" y="91" width="25" height="25"/>
+                    <rect key="frame" x="230" y="153" width="25" height="25"/>
                     <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nVU-MZ-yE4">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -382,17 +379,29 @@
                         <action selector="ytdlHelpAction:" target="-2" id="Tlh-FM-2Ue"/>
                     </connections>
                 </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lGF-0o-tXa">
+                    <rect key="frame" x="118" y="110" width="328" height="42"/>
+                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" id="qIf-ik-sQr">
+                        <font key="font" metaFont="message" size="11"/>
+                        <string key="title">IINA will search yt-dlp in `/opt/homebrew/bin`, `/usr/local/bin` and other system global paths by default.
+You must have yt-dlp installed first: `brew install yt-dlp`</string>
+                        <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
                 <constraint firstItem="iwI-aJ-5PQ" firstAttribute="top" secondItem="mRg-vm-guk" secondAttribute="top" id="2aY-ta-abM"/>
                 <constraint firstItem="mRg-vm-guk" firstAttribute="leading" secondItem="GHK-tq-Ssh" secondAttribute="leading" id="5TM-HE-Id6"/>
+                <constraint firstItem="aSG-qR-qgc" firstAttribute="top" secondItem="1hj-6T-EBw" secondAttribute="bottom" constant="7" id="8QF-bd-Nl5"/>
                 <constraint firstItem="keb-Tn-A5F" firstAttribute="leading" secondItem="oFK-vb-I8Q" secondAttribute="trailing" constant="8" id="8fW-As-rsP"/>
-                <constraint firstItem="YLm-l6-HXj" firstAttribute="top" secondItem="aSG-qR-qgc" secondAttribute="bottom" constant="8" id="CT8-tl-vQe"/>
+                <constraint firstItem="YLm-l6-HXj" firstAttribute="top" secondItem="aSG-qR-qgc" secondAttribute="bottom" constant="6" id="CT8-tl-vQe"/>
                 <constraint firstItem="oFK-vb-I8Q" firstAttribute="leading" secondItem="aSG-qR-qgc" secondAttribute="leading" id="Fhd-gR-JXd"/>
                 <constraint firstAttribute="trailing" secondItem="zou-44-0mz" secondAttribute="trailing" id="HOg-1v-tvx"/>
                 <constraint firstItem="keb-Tn-A5F" firstAttribute="baseline" secondItem="oFK-vb-I8Q" secondAttribute="baseline" id="IZw-zP-Kvb"/>
                 <constraint firstItem="1hj-6T-EBw" firstAttribute="leading" secondItem="iwI-aJ-5PQ" secondAttribute="trailing" constant="8" id="JKg-e4-72c"/>
                 <constraint firstItem="ePv-ZR-5fY" firstAttribute="leading" secondItem="aSG-qR-qgc" secondAttribute="trailing" constant="8" id="JKo-eU-eBQ"/>
+                <constraint firstItem="lGF-0o-tXa" firstAttribute="leading" secondItem="iwI-aJ-5PQ" secondAttribute="leading" id="KXc-3B-Gv6"/>
                 <constraint firstAttribute="trailing" secondItem="YLm-l6-HXj" secondAttribute="trailing" id="Lrb-aT-YRB"/>
                 <constraint firstItem="oFK-vb-I8Q" firstAttribute="top" secondItem="YLm-l6-HXj" secondAttribute="bottom" constant="8" id="RxE-jV-2sN"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iwI-aJ-5PQ" secondAttribute="trailing" constant="20" symbolic="YES" id="SpV-h7-A91"/>
@@ -401,17 +410,20 @@
                 <constraint firstItem="YLm-l6-HXj" firstAttribute="leading" secondItem="aSG-qR-qgc" secondAttribute="leading" id="Yg3-d9-JGH"/>
                 <constraint firstItem="mRg-vm-guk" firstAttribute="top" secondItem="GHK-tq-Ssh" secondAttribute="top" constant="8" id="ZqN-ot-aiW"/>
                 <constraint firstAttribute="trailing" secondItem="ePv-ZR-5fY" secondAttribute="trailing" id="aAK-g3-gQN"/>
+                <constraint firstAttribute="trailing" secondItem="lGF-0o-tXa" secondAttribute="trailing" id="aaW-bk-83o"/>
                 <constraint firstItem="iwI-aJ-5PQ" firstAttribute="leading" secondItem="GHK-tq-Ssh" secondAttribute="leading" constant="120" id="bDa-SV-faC"/>
                 <constraint firstItem="zou-44-0mz" firstAttribute="leading" secondItem="oFK-vb-I8Q" secondAttribute="leading" id="bNf-a5-JOs"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1hj-6T-EBw" secondAttribute="trailing" id="cGP-pF-mPr"/>
                 <constraint firstItem="1hj-6T-EBw" firstAttribute="baseline" secondItem="iwI-aJ-5PQ" secondAttribute="baseline" id="jrh-If-Low"/>
-                <constraint firstItem="aSG-qR-qgc" firstAttribute="top" secondItem="iwI-aJ-5PQ" secondAttribute="bottom" constant="8" id="pnd-cC-3IL"/>
+                <constraint firstItem="aSG-qR-qgc" firstAttribute="top" secondItem="lGF-0o-tXa" secondAttribute="bottom" constant="8" id="pnd-cC-3IL"/>
                 <constraint firstAttribute="trailing" secondItem="keb-Tn-A5F" secondAttribute="trailing" id="rYW-p7-RNf"/>
                 <constraint firstItem="zou-44-0mz" firstAttribute="top" secondItem="oFK-vb-I8Q" secondAttribute="bottom" constant="6" id="ueg-G3-qBM"/>
+                <constraint firstItem="lGF-0o-tXa" firstAttribute="top" secondItem="iwI-aJ-5PQ" secondAttribute="bottom" constant="6" id="vAg-p6-xAs"/>
                 <constraint firstItem="aSG-qR-qgc" firstAttribute="leading" secondItem="iwI-aJ-5PQ" secondAttribute="leading" id="xKM-6D-Zvt"/>
                 <constraint firstItem="ePv-ZR-5fY" firstAttribute="baseline" secondItem="aSG-qR-qgc" secondAttribute="baseline" id="yez-4d-eID"/>
+                <constraint firstItem="1hj-6T-EBw" firstAttribute="centerY" secondItem="iwI-aJ-5PQ" secondAttribute="centerY" id="zj3-1C-6Oc"/>
             </constraints>
-            <point key="canvasLocation" x="-385" y="711"/>
+            <point key="canvasLocation" x="-385" y="716.5"/>
         </customView>
     </objects>
 </document>
