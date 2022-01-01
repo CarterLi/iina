@@ -79,16 +79,18 @@ class VideoView: NSView {
   }
 
   func uninit() {
+    // Order of locking must match the draw methods in ViewLayer.
+    player.mpv?.lockAndSetOpenGLContext()
     uninitLock.lock()
-
-    guard !isUninited else {
+    defer {
       uninitLock.unlock()
-      return
+      player.mpv?.unlockOpenGLContext()
     }
+
+    guard !isUninited else { return }
 
     player.mpv.mpvUninitRendering()
     isUninited = true
-    uninitLock.unlock()
   }
 
   deinit {
