@@ -8,6 +8,7 @@
 
 import Cocoa
 import Mustache
+import WebKit
 
 fileprivate let TitleBarHeightNormal: CGFloat = {
   if #available(macOS 10.16, *) {
@@ -58,6 +59,9 @@ class MainWindowController: PlayerWindowController {
 
   /** For Force Touch. */
   let minimumPressDuration: TimeInterval = 0.5
+
+  /** Danmaku web view */
+  var danmakuView: DanmakuView?
 
   // MARK: - Objects, Views
 
@@ -1104,6 +1108,7 @@ class MainWindowController: PlayerWindowController {
     cv.trackingAreas.forEach(cv.removeTrackingArea)
     playSlider.trackingAreas.forEach(playSlider.removeTrackingArea)
     UserDefaults.standard.set(NSStringFromRect(window!.frame), forKey: "MainWindowLastPosition")
+    unloadDanmakuView()
   }
 
   // MARK: - Window delegate: Full screen
@@ -2805,4 +2810,61 @@ extension MainWindowController: PIPViewControllerDelegate {
 
 protocol SidebarViewController {
   var downShift: CGFloat { get set }
+}
+
+// MARK: - UI: Danmaku
+
+extension MainWindowController: WKNavigationDelegate {
+  func initDanmakuView() -> DanmakuView? {
+    if danmakuView != nil { return danmakuView }
+    guard let contentView = window?.contentView else { return nil }
+
+    let view = DanmakuView()
+    view.navigationDelegate = self
+    view.setValue(false, forKey: "drawsBackground")
+    view.configuration.preferences.setValue(true, forKey: "developerExtrasEnabled")
+    view.configuration.setValue(true, forKey: "allowUniversalAccessFromFileURLs")
+    view.translatesAutoresizingMaskIntoConstraints = false
+    contentView.addSubview(view, positioned: .above, relativeTo: videoView)
+
+    ([.top, .bottom, .left, .right] as [NSLayoutConstraint.Attribute]).forEach { attr in
+      let constraint = NSLayoutConstraint(item: view, attribute: attr, relatedBy: .equal, toItem: contentView, attribute: attr, multiplier: 1, constant: 0)
+      constraint.isActive = true
+    }
+    danmakuView = view
+    return view;
+  }
+
+  func unloadDanmakuView() {
+    guard let view = danmakuView else { return }
+    view.stopLoading()
+    view.navigationDelegate = nil
+    view.removeFromSuperview()
+    danmakuView = nil
+  }
+
+  func loadDanmakuTrack(_ subTrack: MPVTrack) {
+    guard let view = initDanmakuView() else { return }
+    guard let path = subTrack.externalFilename else { return }
+    guard let range = path.range(of: "https://") else { return }
+    view.loadHTMLString(try! String(contentsOfFile: Bundle.main.path(forResource: "danmaku", ofType: "html")!), baseURL: URL(string: "\(path[range.lowerBound...])"))
+  }
+
+  func evaluateJavaScript(_ str: String) {
+    guard let view = danmakuView else { return }
+    view.evaluateJavaScript(str) { _, error in
+      if let error = error {
+        Logger.log("webView.evaluateJavaScript error \(error)")
+      }
+    }
+  }
+
+  func updateDanmakuTime() {
+    guard let pos = player.info.videoPosition else { return }
+    evaluateJavaScript("window.CM && CM.time(\(pos.second * 1000));")
+  }
+
+  func updateDanmakuStatus(_ isPaused: Bool) {
+    evaluateJavaScript("window.CM && CM.\(isPaused ? "stop" : "start")();")
+  }
 }

@@ -164,10 +164,23 @@ extension MainMenuActionHandler {
   }
 
   @objc func menuChangeTrack(_ sender: NSMenuItem) {
+    var track: MPVTrack?;
+    var trackType: MPVTrack.TrackType?; // Could be secondSub
+
     if let trackObj = sender.representedObject as? (MPVTrack, MPVTrack.TrackType) {
-      player.setTrack(trackObj.0.id, forType: trackObj.1)
+      track = trackObj.0
+      trackType = trackObj.1
     } else if let trackObj = sender.representedObject as? MPVTrack {
-      player.setTrack(trackObj.id, forType: trackObj.type)
+      track = trackObj
+      trackType = trackObj.type
+    }
+
+    guard let track = track, let trackType = trackType else { return }
+
+    if track.type == MPVTrack.TrackType.sub && track.lang == "danmaku" {
+      player.mainWindow.loadDanmakuTrack(track)
+    } else {
+      player.setTrack(track.id, forType: trackType)
     }
   }
 
