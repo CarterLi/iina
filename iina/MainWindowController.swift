@@ -1653,9 +1653,13 @@ class MainWindowController: PlayerWindowController {
     fadeableViews.forEach { (v) in
       v.isHidden = false
     }
-    // The OSC was not updated while it was hidden to avoid wasting energy. Update it now.
-    player.syncUITime()
-    player.createSyncUITimer()
+    if player.mpv.fileLoaded {
+      // The OSC was not updated while it was hidden to avoid wasting energy. Update it now.
+      player.syncUITime()
+      player.createSyncUITimer()
+    } else if !player.isInMiniPlayer && fsState.isFullscreen && displayTimeAndBatteryInFullScreen {
+      player.syncUI(.additionalInfo)
+    }
     standardWindowButtons.forEach { $0.isEnabled = true }
     NSAnimationContext.runAnimationGroup({ (context) in
       context.duration = UIAnimationDuration
