@@ -220,6 +220,8 @@
 		AD183C7B2768376B00758D8A /* libcrypto.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = AD183C392768376A00758D8A /* libcrypto.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		AD4353A6277D7871000F5C7B /* libluajit-5.1.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4353A5277D7871000F5C7B /* libluajit-5.1.2.dylib */; };
 		AD4353A7277D7871000F5C7B /* libluajit-5.1.2.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = AD4353A5277D7871000F5C7B /* libluajit-5.1.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		AD43B0AB2782F78D009ADE68 /* DanmakuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD43B0AA2782F78D009ADE68 /* DanmakuView.swift */; };
+		AD43B0AD2782FBC4009ADE68 /* danmaku.html in Resources */ = {isa = PBXBuildFile; fileRef = AD43B0AC2782FBC4009ADE68 /* danmaku.html */; };
 		B4E446E825CB53920069F06E /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = B4E446E725CB53920069F06E /* PromiseKit */; };
 		B4E446F225CB53FF0069F06E /* Gzip in Frameworks */ = {isa = PBXBuildFile; productRef = B4E446F125CB53FF0069F06E /* Gzip */; };
 		B4E446F725CB54EF0069F06E /* Mustache in Frameworks */ = {isa = PBXBuildFile; productRef = B4E446F625CB54EF0069F06E /* Mustache */; };
@@ -1145,6 +1147,8 @@
 		AD183C382768376A00758D8A /* libavutil.56.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libavutil.56.dylib; path = deps/lib/libavutil.56.dylib; sourceTree = "<group>"; };
 		AD183C392768376A00758D8A /* libcrypto.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.3.dylib; path = deps/lib/libcrypto.3.dylib; sourceTree = "<group>"; };
 		AD4353A5277D7871000F5C7B /* libluajit-5.1.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libluajit-5.1.2.dylib"; path = "deps/lib/libluajit-5.1.2.dylib"; sourceTree = "<group>"; };
+		AD43B0AA2782F78D009ADE68 /* DanmakuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanmakuView.swift; sourceTree = "<group>"; };
+		AD43B0AC2782FBC4009ADE68 /* danmaku.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = danmaku.html; sourceTree = "<group>"; };
 		B305513A2190B0C600D3F70E /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/MiniPlayerWindowController.strings; sourceTree = "<group>"; };
 		B3066F5F1F161538004D7559 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InitialWindowController.strings; sourceTree = "<group>"; };
 		B35E0A072107C0E500453AA7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/PrefUtilsViewController.strings; sourceTree = "<group>"; };
@@ -1628,6 +1632,7 @@
 		84A0BAA21D2FAE8200BC8DA1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				AD43B0AC2782FBC4009ADE68 /* danmaku.html */,
 				E393669923BDD1850070D626 /* IINA.entitlements */,
 				6100FF2A1EDF9806002CF0FB /* dsa_pub.pem */,
 				C78987311E34EF170005769F /* InfoPlist.strings */,
@@ -1677,6 +1682,7 @@
 				84D0FB7B1F5E510C00C6A6A7 /* Interactive Mode */,
 				84D377691D74163B007F7396 /* Video */,
 				84D377681D7413D8007F7396 /* Accessories */,
+				AD43B0AA2782F78D009ADE68 /* DanmakuView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -2260,6 +2266,7 @@
 				8400D5DB1E1AB326006785F5 /* FontPickerWindowController.xib in Resources */,
 				8400D5EA1E1AB33B006785F5 /* KeyRecordViewController.xib in Resources */,
 				84EC12861F504D2500137C1E /* FilterPresets.strings in Resources */,
+				AD43B0AD2782FBC4009ADE68 /* danmaku.html in Resources */,
 				8400D5F01E1AB344006785F5 /* PrefCodecViewController.xib in Resources */,
 				1326717E20852D0D000FA7E2 /* SubChooseViewController.xib in Resources */,
 				84C3AB8B1E7BF22300FEFB7A /* MPVCommandFormat.strings in Resources */,
@@ -2391,6 +2398,7 @@
 				8487BEC11D744FA800FD17B0 /* FlippedView.swift in Sources */,
 				84795C371E0825AD0059A648 /* GifGenerator.swift in Sources */,
 				845ABEAC1D4D19C000BFB15B /* MPVTrack.swift in Sources */,
+				AD43B0AB2782F78D009ADE68 /* DanmakuView.swift in Sources */,
 				84AABE981DBFB62F00D138FD /* FixedFontManager.m in Sources */,
 				84EB1EDA1D2F51D3004FA5A1 /* AppDelegate.swift in Sources */,
 				84CFC92623F8DDE000381E5B /* PlayerWindowController.swift in Sources */,

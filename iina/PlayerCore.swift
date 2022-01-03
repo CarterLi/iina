@@ -1297,6 +1297,7 @@ class PlayerCore: NSObject {
     trackListChanged()
     // main thread stuff
     DispatchQueue.main.sync {
+      mainWindow.unloadDanmakuView()
       getPlaylist()
       getChapters()
       syncAbLoop()
@@ -1552,6 +1553,7 @@ class PlayerCore: NSObject {
         if #available(macOS 10.12.2, *) {
           self.touchBarSupport.updateTouchBarPlayBtn()
         }
+        self.mainWindow.updateDanmakuStatus(self.info.isPaused)
       }
 
     case .volume, .muteButton:

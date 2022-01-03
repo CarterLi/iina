@@ -11,10 +11,7 @@
 ## Features
 
 * HDR playback
-
-## Planed features
-
-* Danmaku
+* Danmaku ( supports Bilibili only due to the limitation of `yt-dlp`, experimental )
 
 ## About youtube-dl
 

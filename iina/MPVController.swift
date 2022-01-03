@@ -92,7 +92,8 @@ class MPVController: NSObject {
     MPVOption.Window.windowScale: MPV_FORMAT_DOUBLE,
     MPVProperty.mediaTitle: MPV_FORMAT_STRING,
     MPVProperty.videoParamsRotate: MPV_FORMAT_INT64,
-    MPVProperty.idleActive: MPV_FORMAT_FLAG
+    MPVProperty.idleActive: MPV_FORMAT_FLAG,
+    MPVProperty.timePos: MPV_FORMAT_INT64
   ]
 
   private let isDestroyed = DispatchSemaphore(value: 0)
@@ -1166,6 +1167,12 @@ class MPVController: NSObject {
           player.closeMainWindow()
         }
         receivedEndFileWhileLoading = false
+      }
+
+    case MPVProperty.timePos:
+      DispatchQueue.main.async {
+        guard self.player.mainWindow.isWindowLoaded else { return }
+        self.player.mainWindow.updateDanmakuTime()
       }
 
     default:
