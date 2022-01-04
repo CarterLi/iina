@@ -4,8 +4,8 @@
 class MpvIina < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
-  url "https://github.com/mpv-player/mpv/archive/v0.34.0.tar.gz"
-  sha256 "f654fb6275e5178f57e055d20918d7d34e19949bc98ebbf4a7371902e88ce309"
+  url "https://github.com/mpv-player/mpv/archive/v0.34.1.tar.gz"
+  sha256 "32ded8c13b6398310fa27767378193dc1db6d78b006b70dbcbd3123a1445e746"
   head "https://github.com/mpv-player/mpv.git"
 
   keg_only "it is intended to only be used for building IINA. This formula is not recommended for daily use"
@@ -26,6 +26,7 @@ class MpvIina < Formula
   depends_on "uchardet"
   depends_on "yt-dlp"
   uses_from_macos "libiconv"
+  uses_from_macos "zlib"
 
   def install
     # LANG is unset by default on macOS and causes issues when calling getlocale
