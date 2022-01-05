@@ -40,6 +40,8 @@ class VideoView: NSView {
 
   var pendingRedrawAfterEnteringPIP = false;
 
+  lazy var hdrSubsystem = Logger.Subsystem(rawValue: "hdr")
+
   // MARK: - Attributes
 
   override var mouseDownCanMoveWindow: Bool {
@@ -287,7 +289,7 @@ extension VideoView {
     guard mpv.getDouble(MPVProperty.videoParamsSigPeak) > 1.0 else { return false } // SDR content
 
     guard (window?.screen?.maximumPotentialExtendedDynamicRangeColorComponentValue ?? 1.0) > 1.0 else {
-      Logger.log("HDR: HDR video was found but the display does not support EDR mode");
+      Logger.log("HDR video was found but the display does not support EDR mode", level: .debug, subsystem: hdrSubsystem);
       return false;
     }
 
@@ -343,13 +345,13 @@ extension VideoView {
       }
 
     default:
-      Logger.log("HDR: Unknown HDR color space information gamma=\(gamma) primaries=\(primaries)");
+      Logger.log("Unknown HDR color space information gamma=\(gamma) primaries=\(primaries)", level: .debug, subsystem: hdrSubsystem);
       return false;
     }
 
     if (!player.info.hdrEnabled) { return nil }
 
-    Logger.log("HDR: Will activate HDR color space instead of using ICC profile");
+    Logger.log("Will activate HDR color space instead of using ICC profile", level: .debug, subsystem: hdrSubsystem);
 
     videoLayer.colorspace = CGColorSpace(name: name!)
     player.mpv.setString(MPVOption.GPURendererOptions.iccProfile, "")
