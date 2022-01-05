@@ -393,7 +393,6 @@ You must have yt-dlp installed first: `brew install yt-dlp`</string>
             <constraints>
                 <constraint firstItem="iwI-aJ-5PQ" firstAttribute="top" secondItem="mRg-vm-guk" secondAttribute="top" id="2aY-ta-abM"/>
                 <constraint firstItem="mRg-vm-guk" firstAttribute="leading" secondItem="GHK-tq-Ssh" secondAttribute="leading" id="5TM-HE-Id6"/>
-                <constraint firstItem="aSG-qR-qgc" firstAttribute="top" secondItem="1hj-6T-EBw" secondAttribute="bottom" constant="7" id="8QF-bd-Nl5"/>
                 <constraint firstItem="keb-Tn-A5F" firstAttribute="leading" secondItem="oFK-vb-I8Q" secondAttribute="trailing" constant="8" id="8fW-As-rsP"/>
                 <constraint firstItem="YLm-l6-HXj" firstAttribute="top" secondItem="aSG-qR-qgc" secondAttribute="bottom" constant="6" id="CT8-tl-vQe"/>
                 <constraint firstItem="oFK-vb-I8Q" firstAttribute="leading" secondItem="aSG-qR-qgc" secondAttribute="leading" id="Fhd-gR-JXd"/>
