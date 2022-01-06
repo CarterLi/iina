@@ -1834,10 +1834,11 @@ class NowPlayingInfoManager {
     defer {
       lock.unlock()
     }
+    let activePlayer = PlayerCore.lastActive
+    guard !activePlayer.isMpvTerminating else { return }
+
     let center = MPNowPlayingInfoCenter.default()
     var info = center.nowPlayingInfo ?? [String: Any]()
-
-    let activePlayer = PlayerCore.lastActive
 
     if withTitle {
       if activePlayer.currentMediaIsAudio == .isAudio {
