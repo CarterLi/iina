@@ -171,6 +171,8 @@ class MainWindowController: PlayerWindowController {
   var isShowingPersistentOSD = false
   var osdContext: Any?
 
+  var isSyncTimerStopped = false
+
   // MARK: - Enums
 
   // Window state
@@ -1621,6 +1623,7 @@ class MainWindowController: PlayerWindowController {
 
     // Follow energy efficiency best practices and stop the timer that updates the OSC.
     player.invalidateTimer()
+    isSyncTimerStopped = true
     animationState = .willHide
     fadeableViews.forEach { (v) in
       v.isHidden = false
@@ -1653,10 +1656,11 @@ class MainWindowController: PlayerWindowController {
     fadeableViews.forEach { (v) in
       v.isHidden = false
     }
-    if player.mpv.fileLoaded {
+    if isSyncTimerStopped, player.mpv.fileLoaded {
       // The OSC was not updated while it was hidden to avoid wasting energy. Update it now.
       player.syncUITime()
       player.createSyncUITimer()
+      isSyncTimerStopped = false
     } else if !player.isInMiniPlayer && fsState.isFullscreen && displayTimeAndBatteryInFullScreen {
       player.syncUI(.additionalInfo)
     }
