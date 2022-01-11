@@ -1155,5 +1155,9 @@ Released under GPLv3.</string>
 	</array>
 	<key>NSPrefersDisplaySafeAreaCompatibilityMode</key>
 	<false/>
+	<key>OSAScriptingDefinition</key>
+	<string>IINA.sdef</string>
+	<key>NSAppleScriptEnabled</key>
+	<true/>
 </dict>
 </plist>
