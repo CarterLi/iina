@@ -1153,5 +1153,9 @@ Released under GPLv3.</string>
 			</dict>
 		</dict>
 	</array>
+	<key>OSAScriptingDefinition</key>
+	<string>IINA.sdef</string>
+	<key>NSAppleScriptEnabled</key>
+	<true/>
 </dict>
 </plist>
