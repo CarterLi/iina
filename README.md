@@ -11,7 +11,9 @@
 ## Features
 
 * HDR playback
-* Danmaku ( supports Bilibili only due to the limitation of `yt-dlp`, experimental )
+* Danmaku ( supports Bilibili only due to the limitation of `yt-dlp`, experimental ). I used some code from [iina-danmaku](https://github.com/xjbeta/iina-danmaku), Thanks [xjbeta](https://github.com/xjbeta)
+* AppleScript. I used code from [Wevah's AppleScript support PR](https://github.com/iina/iina/pull/2857), Thanks [Wevah](https://github.com/Wevah)
+* LOTS of bug fixes and performance improvements from [low-batt](https://github.com/iina-plus?type=source)
 
 ## About youtube-dl
 
@@ -20,6 +22,8 @@ We no longer embed the outdated youtube-dl. Users must install `yt-dlp` manually
 ```sh
 $ brew install yt-dlp
 ```
+
+See [the official document](https://github.com/yt-dlp/yt-dlp#readme) for detail
 
 ## Build
 

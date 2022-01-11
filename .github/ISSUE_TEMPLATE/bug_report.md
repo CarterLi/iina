@@ -48,6 +48,7 @@ assignees: ''
 
 <!-- If your issue is related to playback, please check whether mpv has the same problem. If so, this might not be an issue with IINA but rather an bug with mpv. Try reporting an issue there. -->
 - [ ] MPV does not have this problem.
+- [ ] [Official IINA](https://github.com/iina/iina) does not have this problem.
 
 
 **How often does this happen?**
