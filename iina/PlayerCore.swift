@@ -1416,6 +1416,7 @@ class PlayerCore: NSObject {
           self.mainWindow.updatePlayTime(withDuration: true, andProgressBar: true)
         }
         self.mainWindow.updateNetworkState()
+        self.mainWindow.updateDanmakuTime()
       }
 
     case .playButton:
