@@ -453,7 +453,7 @@ class PlayerCore: NSObject {
     // restore layout
     if needRestoreLayout {
       if !Preference.bool(for: .musicModeShowAlbumArt) {
-        miniPlayer.toggleVideoView(self)
+        miniPlayer.doToggleAlbumArt(isInitial: true)
       }
       if Preference.bool(for: .musicModeShowPlaylist) {
         miniPlayer.togglePlaylist(self)
