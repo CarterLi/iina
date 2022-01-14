@@ -51,7 +51,7 @@ class MiniPlayerWindowController: PlayerWindowController, NSPopoverDelegate {
   @IBOutlet weak var defaultAlbumArt: NSView!
   @IBOutlet weak var togglePlaylistButton: NSButton!
   @IBOutlet weak var toggleAlbumArtButton: NSButton!
-  
+
   var isPlaylistVisible = false
   var isVideoVisible = true
 
@@ -118,7 +118,7 @@ class MiniPlayerWindowController: PlayerWindowController, NSPopoverDelegate {
 
     // switching UI
     controlView.alphaValue = 0
-    
+
     // tool tips
     togglePlaylistButton.toolTip = Preference.ToolBarButton.playlist.description()
     toggleAlbumArtButton.toolTip = NSLocalizedString("mini_player.album_art", comment: "album_art")
@@ -379,24 +379,28 @@ class MiniPlayerWindowController: PlayerWindowController, NSPopoverDelegate {
     Preference.set(isPlaylistVisible, for: .musicModeShowPlaylist)
   }
 
-  @IBAction func toggleVideoView(_ sender: Any) {
+  func doToggleAlbumArt(isInitial: Bool) {
     guard let window = window else { return }
     isVideoVisible = !isVideoVisible
     videoWrapperViewBottomConstraint.isActive = isVideoVisible
     controlViewTopConstraint.isActive = !isVideoVisible
     closeButtonBackgroundViewVE.isHidden = !isVideoVisible
     closeButtonBackgroundViewBox.isHidden = isVideoVisible
+
+    var frame = window.frame
     let videoViewHeight = round(videoView.frame.height)
-    if isVideoVisible {
-      var frame = window.frame
-      frame.size.height += videoViewHeight
-      window.setFrame(frame, display: true, animate: false)
-    } else {
-      var frame = window.frame
-      frame.size.height -= videoViewHeight
-      window.setFrame(frame, display: true, animate: false)
+    if isInitial {
+      frame.origin.y += videoViewHeight
     }
-    Preference.set(isVideoVisible, for: .musicModeShowAlbumArt)
+    frame.size.height += isVideoVisible ? videoViewHeight : -videoViewHeight
+    window.setFrame(frame, display: true, animate: false)
+    if !isInitial {
+      Preference.set(isVideoVisible, for: .musicModeShowAlbumArt)
+    }
+  }
+
+  @IBAction func toggleVideoView(_ sender: Any) {
+    doToggleAlbumArt(isInitial: false)
   }
 
   @IBAction func backBtnAction(_ sender: NSButton) {
