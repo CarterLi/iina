@@ -1,11 +1,9 @@
 build: clean archive dmg
 
 depends:
-	brew install --build-from-source ffmpeg-iina
-	brew install --build-from-source mpv-iina
-	rm -rf deps/include/mpv deps/include/ffmpeg
-	cp -r "$(shell brew --prefix ffmpeg-iina)/include/"* deps/include/
-	cp -r "$(shell brew --prefix mpv-iina)/include/mpv" deps/include/
+	brew install --build-from-source ffmpeg-iina mpv-iina
+	rm -rf deps/include && mkdir -p deps/include
+	cp -R "$(shell brew --prefix ffmpeg-iina)/include/"* "$(shell brew --prefix mpv-iina)/include/mpv" deps/include/
 	/usr/bin/ruby other/parse_doc.rb
 	/usr/bin/ruby other/change_lib_dependencies.rb "$(shell brew --prefix)" "$(shell brew --prefix mpv-iina)/lib/libmpv.dylib"
 
