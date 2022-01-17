@@ -4,14 +4,9 @@
 class FfmpegIina < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-4.4.1.tar.xz"
-  sha256 "eadbad9e9ab30b25f5520fbfde99fae4a92a1ae3c0257a8d68569a4651e30e02"
+  url "https://ffmpeg.org/releases/ffmpeg-5.0.tar.xz"
+  sha256 "51e919f7d205062c0fd4fae6243a84850391115104ccf1efc451733bc0ac7298"
   head "https://github.com/FFmpeg/FFmpeg.git"
-
-  patch do
-    url "https://github.com/FFmpeg/FFmpeg/commit/1d23e125b6f76e74b754560c3b6931507cacddce.patch"
-    sha256 "c530212cd56b2086b4ad2d10d18509ea419f2561758859323a54a2cda5161be7"
-  end
 
   keg_only <<EOS
 it is intended to only be used for building IINA.
@@ -21,10 +16,12 @@ EOS
   depends_on "nasm" => :build
   depends_on "pkg-config" => :build
   depends_on "dav1d"
+  depends_on "freetype"
   depends_on "openssl@3"
   depends_on "xz"
 
   uses_from_macos "bzip2"
+  uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
   def install
