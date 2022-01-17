@@ -111,3 +111,4 @@ browser/Firefox_Open_In_IINA/*
 /archive.xcarchive
 /iina.dmg
 /.vscode
+/deps/include/*
