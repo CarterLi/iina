@@ -1157,5 +1157,7 @@ Released under GPLv3.</string>
 	<string>IINA.sdef</string>
 	<key>NSAppleScriptEnabled</key>
 	<true/>
+	<key>NSPrefersDisplaySafeAreaCompatibilityMode</key>
+	<false/>
 </dict>
 </plist>
