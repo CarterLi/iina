@@ -466,18 +466,9 @@ class Utility {
     guard let contents = try? FileManager.default.contentsOfDirectory(
       at: folder,
       includingPropertiesForKeys: [.creationDateKey],
-      options: .skipsSubdirectoryDescendants), !contents.isEmpty else { return nil }
-
-    var latestDate = Date.distantPast
-    var latestFile: URL = contents[0]
-
-    for file in contents {
-      if let date = try? file.resourceValues(forKeys: [.creationDateKey]).creationDate, date > latestDate {
-        latestDate = date
-        latestFile = file
-      }
-    }
-    return latestFile
+      options: .skipsSubdirectoryDescendants),
+          !contents.isEmpty else { return nil }
+    return contents.max { a, b in a.creationDate! < b.creationDate! }
   }
 
   // MARK: - Util classes
