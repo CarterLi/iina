@@ -463,6 +463,9 @@ class PlayerCore: NSObject {
     if Preference.bool(for: .enablePlaylistLoop) {
       togglePlaylistLoop()
     }
+    if Preference.bool(for: .enableFileLoop) {
+      toggleFileLoop()
+    }
   }
 
   func switchBackFromMiniPlayer(automatically: Bool, showMainWindow: Bool = true) {
@@ -673,8 +676,8 @@ class PlayerCore: NSObject {
   }
 
   func toggleFileLoop() {
-    let isLoop = mpv.getFlag(MPVOption.PlaybackControl.loopFile)
-    mpv.setFlag(MPVOption.PlaybackControl.loopFile, !isLoop)
+    let isLoop = mpv.getString(MPVOption.PlaybackControl.loopFile) == "inf"
+    mpv.setString(MPVOption.PlaybackControl.loopFile, isLoop ? "no" : "inf")
   }
 
   func togglePlaylistLoop() {
@@ -1349,6 +1352,7 @@ class PlayerCore: NSObject {
     case chapterList
     case playlist
     case playlistLoop
+    case fileLoop
     case additionalInfo
   }
 
@@ -1456,7 +1460,12 @@ class PlayerCore: NSObject {
 
     case .playlistLoop:
       DispatchQueue.main.async {
-        self.mainWindow.playlistView.updateLoopBtnStatus()
+        self.mainWindow.playlistView.updateLoopPlaylistBtnStatus()
+      }
+
+    case .fileLoop:
+      DispatchQueue.main.async {
+        self.mainWindow.playlistView.updateLoopFileBtnStatus()
       }
 
     case .additionalInfo:
