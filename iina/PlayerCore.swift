@@ -459,6 +459,10 @@ class PlayerCore: NSObject {
         miniPlayer.togglePlaylist(self)
       }
     }
+
+    if Preference.bool(for: .enablePlaylistLoop) {
+      togglePlaylistLoop()
+    }
   }
 
   func switchBackFromMiniPlayer(automatically: Bool, showMainWindow: Bool = true) {

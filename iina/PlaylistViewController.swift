@@ -207,7 +207,9 @@ class PlaylistViewController: NSViewController, NSTableViewDataSource, NSTableVi
   func updateLoopBtnStatus() {
     guard isViewLoaded else { return }
     let loopStatus = player.mpv.getString(MPVOption.PlaybackControl.loopPlaylist)
-    loopBtn.state = (loopStatus == "inf" || loopStatus == "force") ? .on : .off
+    let loopEnabled = loopStatus == "inf" || loopStatus == "force"
+    loopBtn.state = loopEnabled ? .on : .off
+    Preference.set(loopEnabled, for: .enablePlaylistLoop)
   }
     
   // MARK: - Tab switching

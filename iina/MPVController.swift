@@ -70,7 +70,7 @@ class MPVController: NSObject {
     MPVOption.TrackSelection.sid: MPV_FORMAT_INT64,
     MPVOption.Subtitles.secondarySid: MPV_FORMAT_INT64,
     MPVOption.PlaybackControl.pause: MPV_FORMAT_FLAG,
-    MPVOption.PlaybackControl.loopPlaylist: MPV_FORMAT_FLAG,
+    MPVOption.PlaybackControl.loopPlaylist: MPV_FORMAT_STRING,
     MPVProperty.chapter: MPV_FORMAT_INT64,
     MPVOption.Video.deinterlace: MPV_FORMAT_FLAG,
     MPVOption.Video.hwdec: MPV_FORMAT_STRING,

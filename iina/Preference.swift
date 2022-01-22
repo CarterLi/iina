@@ -242,6 +242,8 @@ struct Preference {
 
     static let followGlobalSeekTypeWhenAdjustSlider = Key("followGlobalSeekTypeWhenAdjustSlider")
 
+    static let enablePlaylistLoop = Key("enablePlaylistLoop")
+
     // Input
 
     /** Whether catch media keys event (bool) */
@@ -739,6 +741,7 @@ struct Preference {
     .audioDeviceDesc: "Autoselect device",
     .enableInitialVolume: false,
     .initialVolume: 100,
+    .enablePlaylistLoop: false,
 
     .subAutoLoadIINA: IINAAutoLoadAction.iina.rawValue,
     .subAutoLoadPriorityString: "",
