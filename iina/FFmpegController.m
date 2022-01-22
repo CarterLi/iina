@@ -133,7 +133,7 @@ return -1;\
   }
 
   // Find the decoder for the video stream
-  AVCodec *pCodec = avcodec_find_decoder(pVideoStream->codecpar->codec_id);
+  const AVCodec *pCodec = avcodec_find_decoder(pVideoStream->codecpar->codec_id);
   CHECK_NOTNULL(pCodec, @"Unsupported codec")
 
   // Open codec
@@ -393,7 +393,7 @@ static inline double avr2d(AVRational a) {
 
     if (!metadata) {
       // Find the decoder for the video stream
-      AVCodec *pCodec = avcodec_find_decoder(pVideoStream->codecpar->codec_id);
+      const AVCodec *pCodec = avcodec_find_decoder(pVideoStream->codecpar->codec_id);
       if (!pCodec) return NULL;
 
       // Open codec
