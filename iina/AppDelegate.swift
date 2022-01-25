@@ -321,17 +321,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // The call to terminateMPV instructed mpv to quit, but that is happening asynchronously in the
     // background. Must wait for mpv to finish terminating before allowing Cocoa to terminate the
     // application. This must be done in another thread to avoid blocking the main thread.
+    let cores = PlayerCore.playerCores
     terminateQueue.async {
       // Normally mpv will quickly terminate, but we will impose a time limit to insure termination
       // of the application is not blocked.
       Logger.log("Waiting for mpv termination")
       let timeout = DispatchTime.now() + DispatchTimeInterval.milliseconds(500)
-      for pc in PlayerCore.playerCores {
+      for pc in cores {
+        Logger.log("Waiting for mpv \(String(describing: pc.mpv.mpvClientName)) to terminate", level: .warning)
         let result = pc.waitForTermination(timeout: timeout)
         if result == .timedOut {
           Logger.log("Timeout waiting for termination of player core", level: .warning)
         }
       }
+      Logger.log("Queuing task to proceed with termination")
       // Tell Cocoa to proceed with termination. This has to be done on the main thread.
       DispatchQueue.main.async {
         Logger.log("Proceeding with termination")
