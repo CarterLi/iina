@@ -440,6 +440,7 @@ class MPVController: NSObject {
     removeObservers()
     // The quit command executes asynchronously. A MPV_EVENT_SHUTDOWN event is emitted when the quit
     // command finishes.
+    Logger.log("Destroying mpv context \(String(describing: mpvClientName))")
     command(.quit)
   }
 
@@ -760,6 +761,7 @@ class MPVController: NSObject {
         mpv_destroy(mpv)
         mpv = nil
         isDestroyed.signal()
+        Logger.log("Destroyed mpv context \(String(describing: mpvClientName))")
       }
 
     case MPV_EVENT_LOG_MESSAGE:

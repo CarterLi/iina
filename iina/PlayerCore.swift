@@ -6,6 +6,7 @@
 //  Copyright © 2016 lhc. All rights reserved.
 //
 
+import Atomics
 import Cocoa
 import MediaPlayer
 
@@ -131,7 +132,15 @@ class PlayerCore: NSObject {
 
   var displayOSD: Bool = true
 
-  var isMpvTerminating: Bool = false
+  /// Whether this player is shutting down its mpv context.
+  ///
+  /// The backing property for this computed property, `terminating`, must be a `ManagedAtomic` because this property is
+  /// referenced from both the main thread and the controller threads in `MPVController`.
+  var isMpvTerminating: Bool {
+    get { terminating.load(ordering: .sequentiallyConsistent) }
+    set { terminating.store(newValue, ordering: .sequentiallyConsistent) }
+  }
+  private var terminating = ManagedAtomic<Bool>(false)
 
   var isInMiniPlayer = false
   var switchedToMiniPlayerManually = false
