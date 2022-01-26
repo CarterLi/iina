@@ -314,22 +314,7 @@ extension VideoView {
       return false;
     }
 
-    guard var primaries = mpv.getString(MPVProperty.videoParamsPrimaries), var gamma = mpv.getString(MPVProperty.videoParamsGamma) else { return false }
-
-    if Preference.bool(for: .useMasteringDisplayMetadata) {
-      // Because MPV won't check for mastering display metadata, we have to check it ourselves
-      // TODO: Supports multi-track video source. Maps MPV `player.info.vid` to FFMPEG `streamIndex`
-      if primaries == "bt.2020" && !player.info.isNetworkResource && player.info.videoTracks.count == 1 {
-        if let path = mpv.getString(MPVProperty.path), let colorspaceData = FFmpegController.getColorSpaceMetadata(forFile: path) {
-          if let _primaries = colorspaceData["primaries"] as? String {
-            primaries = _primaries
-          }
-          if let _gamma = colorspaceData["color-trc"] as? String {
-            gamma = _gamma
-          }
-        }
-      }
-    }
+    guard let primaries = mpv.getString(MPVProperty.videoParamsPrimaries), let gamma = mpv.getString(MPVProperty.videoParamsGamma) else { return false }
 
     var name: CFString? = nil;
     switch primaries {

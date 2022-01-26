@@ -57,6 +57,3 @@
 
 /* Class = "NSButtonCell"; title = "Load ICC profile"; ObjectID = "3g4-jW-uJd"; */
 "3g4-jW-uJd.title" = "加载ICC色彩特性文件";
-
-/* Class = "NSButtonCell"; title = "Use mastering display metadata"; ObjectID = "bQI-md-h8I"; */
-"bQI-md-h8I.title" = "使用母版显示器元数据";

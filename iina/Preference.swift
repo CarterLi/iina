@@ -151,7 +151,6 @@ struct Preference {
     static let forceDedicatedGPU = Key("forceDedicatedGPU")
     static let matchRefreshRate = Key("matchRefreshRate")
     static let loadIccProfile = Key("loadIccProfile")
-    static let useMasteringDisplayMetadata = Key("useMasteringDisplayMetadata")
 
     static let audioThreads = Key("audioThreads")
     static let audioLanguage = Key("audioLanguage")
@@ -731,7 +730,6 @@ struct Preference {
     .forceDedicatedGPU: false,
     .matchRefreshRate: false,
     .loadIccProfile: true,
-    .useMasteringDisplayMetadata: true,
     .audioThreads: 0,
     .audioLanguage: "",
     .maxVolume: 100,
