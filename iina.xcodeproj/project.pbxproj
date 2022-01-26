@@ -15,6 +15,7 @@
 		49542986216C34950058F680 /* OpenInIINA.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49542973216C34950058F680 /* OpenInIINA.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		496B19921E2968530035AF10 /* PIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496B19911E2968530035AF10 /* PIP.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		51492FCE2714DE0C00C1FC3C /* PlaySlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51492FCD2714DE0C00C1FC3C /* PlaySlider.swift */; };
+		5171A3E627A1034E009F5780 /* Atomics in Frameworks */ = {isa = PBXBuildFile; productRef = 5171A3E527A1034E009F5780 /* Atomics */; };
 		519872FF26879B9B00F84BCC /* AccessibilityPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519872FE26879B9B00F84BCC /* AccessibilityPreferences.swift */; };
 		51B494D82718FDD700B9381A /* PlaySliderLoopKnob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B494D72718FDD700B9381A /* PlaySliderLoopKnob.swift */; };
 		6100FF2B1EDF9806002CF0FB /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 6100FF2A1EDF9806002CF0FB /* dsa_pub.pem */; };
@@ -1398,6 +1399,7 @@
 				AD04788627953DCE005A6B9E /* libgraphite2.3.dylib in Frameworks */,
 				AD04788E27953DCE005A6B9E /* liblcms2.2.dylib in Frameworks */,
 				AD04789627953DCE005A6B9E /* libmpv.1.dylib in Frameworks */,
+				5171A3E627A1034E009F5780 /* Atomics in Frameworks */,
 				AD0478BF27953DCF005A6B9E /* libXau.6.dylib in Frameworks */,
 				AD04787627953DCE005A6B9E /* libb2.1.dylib in Frameworks */,
 				AD04787827953DCE005A6B9E /* libbluray.2.dylib in Frameworks */,
@@ -1918,6 +1920,7 @@
 				B4E446F625CB54EF0069F06E /* Mustache */,
 				B4E4470025CE3F930069F06E /* Sparkle */,
 				8451E6D82604AEFC009A15D7 /* Just */,
+				5171A3E527A1034E009F5780 /* Atomics */,
 			);
 			productName = mpvx;
 			productReference = 84EB1ED61D2F51D3004FA5A1 /* IINA.app */;
@@ -2004,6 +2007,7 @@
 				B4E446F525CB54EF0069F06E /* XCRemoteSwiftPackageReference "GRMustache" */,
 				B4E446FF25CE3F930069F06E /* XCRemoteSwiftPackageReference "Sparkle" */,
 				8451E6D72604AEFC009A15D7 /* XCRemoteSwiftPackageReference "Just" */,
+				5171A3E427A1034E009F5780 /* XCRemoteSwiftPackageReference "swift-atomics" */,
 			);
 			productRefGroup = 84EB1ED71D2F51D3004FA5A1 /* Products */;
 			projectDirPath = "";
@@ -3614,6 +3618,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5171A3E427A1034E009F5780 /* XCRemoteSwiftPackageReference "swift-atomics" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-atomics.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		8451E6D72604AEFC009A15D7 /* XCRemoteSwiftPackageReference "Just" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dduan/Just";
@@ -3657,6 +3669,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5171A3E527A1034E009F5780 /* Atomics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5171A3E427A1034E009F5780 /* XCRemoteSwiftPackageReference "swift-atomics" */;
+			productName = Atomics;
+		};
 		8451E6D82604AEFC009A15D7 /* Just */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8451E6D72604AEFC009A15D7 /* XCRemoteSwiftPackageReference "Just" */;
