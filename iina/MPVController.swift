@@ -655,8 +655,10 @@ class MPVController: NSObject {
 
     switch eventId {
     case MPV_EVENT_SHUTDOWN:
+      Logger.log("Received shutdown event for mpv context \(String(describing: mpvClientName))")
       let quitByMPV = !player.isMpvTerminating
       if quitByMPV {
+        Logger.log("Calling NSApp.terminate")
         DispatchQueue.main.sync {
           NSApp.terminate(nil)
         }
