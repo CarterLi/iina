@@ -332,16 +332,20 @@ extension VideoView {
         name = CGColorSpace.displayP3
       }
 
-    case "bt.2020": // deprecated
+    case "bt.2020":
       switch gamma {
       case "pq":
         if #available(macOS 11.0, *) {
+          name = CGColorSpace.itur_2100_PQ
+        } else if #available(macOS 10.15.4, *) {
           name = CGColorSpace.itur_2020_PQ
         } else {
           name = CGColorSpace.itur_2020_PQ_EOTF
         }
       case "hlg":
-        if #available(macOS 10.15.6, *) {
+        if #available(macOS 11.0, *) {
+          name = CGColorSpace.itur_2100_HLG
+        } else if #available(macOS 10.15.6, *) {
           name = CGColorSpace.itur_2020_HLG
         } else {
           fallthrough
