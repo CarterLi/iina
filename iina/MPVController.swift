@@ -6,6 +6,7 @@
 //  Copyright © 2016 lhc. All rights reserved.
 //
 
+import Atomics
 import Cocoa
 import Foundation
 
@@ -96,6 +97,36 @@ class MPVController: NSObject {
   ]
 
   private let isDestroyed = DispatchSemaphore(value: 0)
+
+  /// Whether the mpv context is still valid and can be used.
+  ///
+  /// If a quit command has been sent to mpv or a `MPV_EVENT_SHUTDOWN` event was received because the user typed a "q"
+  /// command in the window has already shutdown the context, we no longer consider the context valid. This property is used
+  /// during application termination to prevent the use of the context during shutdown.
+  private var isMpvContextValid: Bool { !isQuitting && !MPVController.isShutdown }
+
+  /// Whether a quit command has been sent to mpv.
+  ///
+  /// The backing property for this computed property, `quitting`, must be a `ManagedAtomic` because this property is
+  /// referenced from both the main thread and the controller threads in `MPVController`.
+  var isQuitting: Bool {
+    get { quitting.load(ordering: .sequentiallyConsistent) }
+    set { quitting.store(newValue, ordering: .sequentiallyConsistent) }
+  }
+  private var quitting = ManagedAtomic<Bool>(false)
+
+  /// Whether mpv has shutdown.
+  ///
+  /// This property is needed to distinguish the case where the user types "q" in the window and mpv shuts itself down. IINA should
+  /// avoid needlessly sending a quit command in this case.
+  ///
+  /// The backing property for this computed property, `shutdown`, must be a `ManagedAtomic` because this property is
+  /// referenced from both the main thread and the controller threads in `MPVController`.
+  static var isShutdown: Bool {
+    get { shutdown.load(ordering: .sequentiallyConsistent) }
+    set { shutdown.store(newValue, ordering: .sequentiallyConsistent) }
+  }
+  private static var shutdown = ManagedAtomic<Bool>(false)
 
   init(playerCore: PlayerCore) {
     self.player = playerCore
@@ -434,13 +465,17 @@ class MPVController: NSObject {
     }
   }
 
-  // Basically send quit to mpv
-  func mpvQuit() {
+  /// Shutdown this mpv controller.
+  ///
+  /// If mpv has not already shutdown due to the user typing "q" in the window then a quit command will be sent to mpv, which mpv
+  /// will execute asynchronously in the background. A `MPV_EVENT_SHUTDOWN` event is emitted when the quit command finishes.
+  /// - returns: Whether a quit command was sent or not
+  func mpvQuit() -> Bool {
     removeObservers()
-    // The quit command executes asynchronously. A MPV_EVENT_SHUTDOWN event is emitted when the quit
-    // command finishes.
-    Logger.log("Destroying mpv context \(String(describing: mpvClientName))")
+    guard isMpvContextValid else { return false }
+    isQuitting = true
     command(.quit)
+    return true
   }
 
   // MARK: - Command & property
@@ -496,43 +531,43 @@ class MPVController: NSObject {
 
   // Set property
   func setFlag(_ name: String, _ flag: Bool) {
-    guard !player.isMpvTerminating else { return }
+    guard isMpvContextValid else { return }
     var data: Int = flag ? 1 : 0
     mpv_set_property(mpv, name, MPV_FORMAT_FLAG, &data)
   }
 
   func setInt(_ name: String, _ value: Int) {
-    guard !player.isMpvTerminating else { return }
+    guard isMpvContextValid else { return }
     var data = Int64(value)
     mpv_set_property(mpv, name, MPV_FORMAT_INT64, &data)
   }
 
   func setDouble(_ name: String, _ value: Double) {
-    guard !player.isMpvTerminating else { return }
+    guard isMpvContextValid else { return }
     var data = value
     mpv_set_property(mpv, name, MPV_FORMAT_DOUBLE, &data)
   }
 
   func setFlagAsync(_ name: String, _ flag: Bool) {
-    guard !player.isMpvTerminating else { return }
+    guard isMpvContextValid else { return }
     var data: Int = flag ? 1 : 0
     mpv_set_property_async(mpv, 0, name, MPV_FORMAT_FLAG, &data)
   }
 
   func setIntAsync(_ name: String, _ value: Int) {
-    guard !player.isMpvTerminating else { return }
+    guard isMpvContextValid else { return }
     var data = Int64(value)
     mpv_set_property_async(mpv, 0, name, MPV_FORMAT_INT64, &data)
   }
 
   func setDoubleAsync(_ name: String, _ value: Double) {
-    guard !player.isMpvTerminating else { return }
+    guard isMpvContextValid else { return }
     var data = value
     mpv_set_property_async(mpv, 0, name, MPV_FORMAT_DOUBLE, &data)
   }
 
   func setString(_ name: String, _ value: String) {
-    guard !player.isMpvTerminating else { return }
+    guard isMpvContextValid else { return }
     mpv_set_property_string(mpv, name, value)
   }
 
@@ -651,22 +686,27 @@ class MPVController: NSObject {
 
   // Handle the event
   private func handleEvent(_ event: UnsafePointer<mpv_event>!) {
+    guard !MPVController.isShutdown else { return }
+
     let eventId = event.pointee.event_id
 
     switch eventId {
     case MPV_EVENT_SHUTDOWN:
-      Logger.log("Received shutdown event for mpv context \(String(describing: mpvClientName))")
-      let quitByMPV = !player.isMpvTerminating
-      if quitByMPV {
-        Logger.log("Calling NSApp.terminate")
-        DispatchQueue.main.sync {
-          NSApp.terminate(nil)
-        }
-      } else {
+      if isQuitting {
+        // A quit command was sent to mpv and mpv has been asynchonously executing that command in
+        // the background. This event indicates the command is complete and context has been
+        // shutdown.
         mpv_destroy(mpv)
         mpv = nil
         isDestroyed.signal()
-        Logger.log("Destroyed mpv context \(String(describing: mpvClientName))")
+      } else {
+        // No quit command was sent. The user must have typed a "q" in the window causing mpv to
+        // shutdown.
+        MPVController.isShutdown = true
+        // Initiate application termination.
+        DispatchQueue.main.sync {
+          NSApp.terminate(nil)
+        }
       }
 
     case MPV_EVENT_LOG_MESSAGE:
@@ -801,7 +841,7 @@ class MPVController: NSObject {
 
   private func onVideoReconfig() {
     // If loading file, video reconfig can return 0 width and height
-    if player.info.fileLoading, player.isMpvTerminating {
+    if player.info.fileLoading, !isMpvContextValid {
       return
     }
     var dwidth = getInt(MPVProperty.dwidth)
@@ -827,7 +867,7 @@ class MPVController: NSObject {
     // Once mpv starts terminating we no longer care about property changes and especially do not
     // want to process changes that could trigger calls to mpv. Observers are being deregistered so
     // there is only a brief window where this might trigger.
-    guard !player.isMpvTerminating else { return }
+    guard isMpvContextValid else { return }
 
     var needReloadQuickSettingsView = false
 

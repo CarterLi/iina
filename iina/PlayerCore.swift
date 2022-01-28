@@ -384,15 +384,13 @@ class PlayerCore: NSObject {
   }
 
   // Terminate mpv
-  func terminateMPV(sendQuit: Bool = true) {
-    guard !isMpvTerminating else { return }
+  func terminateMPV() -> Bool {
+    guard !isMpvTerminating else { return false }
     isMpvTerminating = true
     savePlaybackPosition()
     invalidateTimer()
     uninitVideo()
-    if sendQuit {
-      mpv.mpvQuit()
-    }
+    return mpv.mpvQuit()
   }
 
   /// Wait until this player core has been terminated.
@@ -400,9 +398,11 @@ class PlayerCore: NSObject {
   /// The method `terminateMPV` **must** be called before calling this method. That method calls `mpvQuit` which
   /// executes asynchronously. This method waits until mpv has been destroyed.
   /// - parameter timeout: The latest time to wait for this player core to terminate
-  /// - returns: Whether this player core has terminated or waiting timed out
-  func waitForTermination(timeout: DispatchTime) -> DispatchTimeoutResult {
-    mpv.waitForDestruction(timeout: timeout)
+  func waitForTermination(timeout: DispatchTime) {
+    let result = mpv.waitForDestruction(timeout: timeout)
+    if result == .timedOut {
+      Logger.log("Timeout waiting for termination of player\(label!)", level: .warning)
+    }
   }
 
   // invalidate timer
