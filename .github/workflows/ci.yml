@@ -13,19 +13,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Prepare
+      - name: Download dependencies
         run: |
-          brew update
-          cp other/*-iina.rb $(brew --repo homebrew/core)/Formula
-          brew install create-dmg
+          pwd
+          curl -LO https://nightly.link/iina-plus/homebrew-mpv-iina/actions/runs/1790379856/deps.zip
+          unzip -d deps deps
 
-      - name: Install dependencies
-        run: make depends
+      - name: Archive
+        run: make archive
 
-      - name: Build
-        run: make build
+      - name: Create dmg
+        run: brew install create-dmg && make dmg
 
       - uses: actions/upload-artifact@v2
         with:
           name: IINA
-          path: IINA.dmg
+          path: ./iina.dmg

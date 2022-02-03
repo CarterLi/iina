@@ -9,8 +9,8 @@ depends:
 	# Make brew use our IINA FFmpeg and mpv formulas.
 	cp other/*-iina.rb "$(shell brew --repo homebrew/core)/Formula"
 	# Brew will build for the macOS version running on the local machine.
-	# The compile script will patch brew so that it builds for the oldest macOS IINA supports.
-	/usr/bin/ruby other/compile.rb
+	brew install --build-from-source ffmpeg-iina mpv-iina
+
 	rm -rf deps/include && mkdir -p deps/include
 	cp -R "$(shell brew --prefix ffmpeg-iina)/include/"* "$(shell brew --prefix mpv-iina)/include/mpv" deps/include/
 	/usr/bin/ruby other/change_lib_dependencies.rb "$(shell brew --prefix)" "$(shell brew --prefix mpv-iina)/lib/libmpv.dylib"
