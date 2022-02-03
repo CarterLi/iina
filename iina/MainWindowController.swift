@@ -1161,7 +1161,7 @@ class MainWindowController: PlayerWindowController {
 
       userDisplay = videoView.currentDisplay
       userDisplayMode = CGDisplayCopyDisplayMode(userDisplay!)
-      userRefreshRate = player.mpv.getDouble(MPVProperty.overrideDisplayFps)
+      userRefreshRate = player.mpv.getDouble(MPVProperty.displayFps)
 
       if (userDisplayMode != nil) {
         let displayModes = CGDisplayCopyAllDisplayModes(userDisplay!, nil) as! [CGDisplayMode]
