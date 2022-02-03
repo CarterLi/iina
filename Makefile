@@ -17,11 +17,8 @@ depends:
 
 	# Generate MPVCommand.swift, MPVOption.swift and MPVProperty.swift by parsing current mpv documentation.
 	/usr/bin/ruby other/parse_doc.rb
-	# FIXME The property override-display-fps is no longer listed in the current mpv documentation.
-	# Possibly replaced by a display-fps property. This needs to be investigated.
-	# For now do not use the new mpv interface classes, leave them in the "other" directory.
 	# The script drops the generated sources in the "other" directory. Move them to the source directory.
-	# mv other/MPVCommand.swift other/MPVOption.swift other/MPVProperty.swift iina/
+	mv other/MPVCommand.swift other/MPVOption.swift other/MPVProperty.swift iina/
 
 .PHONY: archive
 archive:

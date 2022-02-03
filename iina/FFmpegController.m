@@ -13,7 +13,6 @@
 #import <libavformat/avformat.h>
 #import <libswscale/swscale.h>
 #import <libavutil/imgutils.h>
-#import <libavutil/mastering_display_metadata.h>
 
 #define THUMB_COUNT_DEFAULT 100
 
