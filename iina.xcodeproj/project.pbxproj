@@ -1972,7 +1972,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "echo \"Copy Dylib Symlinks\"\n\ncp -Rv \"${SRCROOT}/deps/lib/\"*.dylib \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\n";
+			shellScript = "echo \"Copy Dylib Symlinks\"\n\ncp -Rfv \"${SRCROOT}/deps/lib/\"*.dylib \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
