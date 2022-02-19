@@ -285,6 +285,8 @@ class VideoView: NSView {
     }
 
     videoLayer.colorspace = nil;
+    player.mpv.setString(MPVOption.GPURendererOptions.targetTrc, "auto")
+    player.mpv.setString(MPVOption.GPURendererOptions.targetPrim, "auto")
   }
 }
 
