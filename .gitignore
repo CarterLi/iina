@@ -113,3 +113,6 @@ browser/Firefox_Open_In_IINA/*
 /.vscode
 /deps/include/*
 deps.zip
+
+/other/change_lib_dependencies.rb
+/other/parse_doc.rb

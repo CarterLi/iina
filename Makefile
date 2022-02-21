@@ -6,8 +6,11 @@ build: clean archive dmg
 
 .PHONY: depends
 depends:
+	git submodule update --init --progress
+	cp homebrew-mpv-iina/other/* other/
+
 	# Make brew use our IINA FFmpeg and mpv formulas.
-	cp other/*-iina.rb "$(shell brew --repo homebrew/core)/Formula"
+	cp homebrew-mpv-iina/*-iina.rb "$(shell brew --repo homebrew/core)/Formula"
 	# Brew will build for the macOS version running on the local machine.
 	brew install --build-from-source ffmpeg-iina mpv-iina
 

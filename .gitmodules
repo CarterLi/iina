@@ -1,0 +1,3 @@
+[submodule "homebrew-mpv-iina"]
+	path = homebrew-mpv-iina
+	url = https://github.com/iina-plus/homebrew-mpv-iina.git
