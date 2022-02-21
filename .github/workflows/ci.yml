@@ -16,7 +16,7 @@ jobs:
       - name: Download dependencies
         run: |
           pwd
-          curl -LO https://nightly.link/iina-plus/homebrew-mpv-iina/actions/runs/1790379856/deps.zip
+          curl -LO https://nightly.link/iina-plus/homebrew-mpv-iina/actions/runs/1874034113/deps.zip
           unzip -d deps deps
 
       - name: Archive
