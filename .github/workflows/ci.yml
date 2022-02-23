@@ -3,11 +3,9 @@ name: CI
 on:
   push:
       branches: [develop]
-  pull_request:
-      branches: [develop]
 
 jobs:
-  build:
+  build-x64:
     runs-on: macos-latest
 
     steps:
@@ -22,10 +20,40 @@ jobs:
       - name: Archive
         run: make archive
 
-      - name: Create dmg
-        run: brew install create-dmg && make dmg
+      - name: Create tar
+        run: |
+          rm -rf ./IINA.app
+          mv ./archive.xcarchive/Products/Applications/IINA.app .
+          otool -L ./IINA.app/Contents/MacOS/IINA
+          tar Jcvf iina.tar.xz ./IINA.app
 
       - uses: actions/upload-artifact@v2
         with:
-          name: IINA
-          path: ./iina.dmg
+          name: IINA-x86_64
+          path: ./iina.tar.xz
+
+  build-arm64:
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Depends
+        run: make depends
+
+      - name: Archive
+        run: |
+          make clean
+          xcodebuild -project iina.xcodeproj -scheme iina -config Release -archivePath ./archive archive -arch arm64
+
+      - name: Create tar
+        run: |
+          rm -rf ./IINA.app
+          mv ./archive.xcarchive/Products/Applications/IINA.app .
+          otool -L ./IINA.app/Contents/MacOS/IINA
+          tar Jcvf iina.tar.xz ./IINA.app
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: IINA-arm64
+          path: ./iina.tar.xz
