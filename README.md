@@ -50,8 +50,11 @@ $ make build
 
 We release only snapshot builds. `v1.2.0-30` means this version is the 30th snapshot build that is based on the official `v1.2.0` release version. If the official repo releases `v1.2.1`, the next version of IINA+ will be `v1.2.1-1`
 
-* Intel (x64): Download artifacts in <https://github.com/iina-plus/iina/actions> ( Requires 10.15+ )
-* Apple M1 (aarch64): Download assets in <https://github.com/iina-plus/iina/releases> ( Requires 12.0+ )
+You may download prebuilt binaries on Github Action page: https://github.com/iina-plus/iina/actions
+
+* Intel (x64): Artifacts named `IINA-x86_64` ( Requires 10.15+ )
+* Apple M1 (aarch64): Artifacts named `IINA-arm64` ( Requires 12.0+ )
+* No universal binaries available
 
 ## License
 
