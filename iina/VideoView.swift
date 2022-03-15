@@ -309,13 +309,6 @@ extension VideoView {
   func requestEdrMode() -> Bool? {
     guard let mpv = player.mpv else { return false }
 
-    guard mpv.getDouble(MPVProperty.videoParamsSigPeak) > 1.0 else { return false } // SDR content
-
-    guard (window?.screen?.maximumPotentialExtendedDynamicRangeColorComponentValue ?? 1.0) > 1.0 else {
-      Logger.log("HDR video was found but the display does not support EDR mode", level: .debug, subsystem: hdrSubsystem);
-      return false;
-    }
-
     guard let primaries = mpv.getString(MPVProperty.videoParamsPrimaries), let gamma = mpv.getString(MPVProperty.videoParamsGamma) else { return false }
 
     var name: CFString? = nil;
@@ -356,12 +349,20 @@ extension VideoView {
         name = CGColorSpace.itur_2020
       }
 
+    case "bt.709":
+      return false; // SDR
+
     default:
       Logger.log("Unknown HDR color space information gamma=\(gamma) primaries=\(primaries)", level: .debug, subsystem: hdrSubsystem);
       return false;
     }
 
-    if (!player.info.hdrEnabled) { return nil }
+    guard (window?.screen?.maximumPotentialExtendedDynamicRangeColorComponentValue ?? 1.0) > 1.0 else {
+      Logger.log("HDR video was found but the display does not support EDR mode", level: .debug, subsystem: hdrSubsystem);
+      return false;
+    }
+
+    guard player.info.hdrEnabled else { return nil }
 
     Logger.log("Will activate HDR color space instead of using ICC profile", level: .debug, subsystem: hdrSubsystem);
 
