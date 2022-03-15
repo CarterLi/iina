@@ -127,7 +127,8 @@ class InspectorWindowController: NSWindowController, NSTableViewDelegate, NSTabl
         ]
 
         for (k, v) in strProperties {
-          let value = controller.getString(k)
+          var value = controller.getString(k)
+          if value == "" { value = nil }
           v.stringValue = value ?? "N/A"
           self.setLabelColor(v, by: value != nil)
         }
