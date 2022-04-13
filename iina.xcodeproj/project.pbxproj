@@ -14,6 +14,7 @@
 		49542982216C34950058F680 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 49542981216C34950058F680 /* ToolbarItemIcon.pdf */; };
 		49542986216C34950058F680 /* OpenInIINA.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49542973216C34950058F680 /* OpenInIINA.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		496B19921E2968530035AF10 /* PIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496B19911E2968530035AF10 /* PIP.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		511527B728069C7C00B3A097 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 511527B628069C7C00B3A097 /* Algorithms */; };
 		51492FCE2714DE0C00C1FC3C /* PlaySlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51492FCD2714DE0C00C1FC3C /* PlaySlider.swift */; };
 		5171A3E627A1034E009F5780 /* Atomics in Frameworks */ = {isa = PBXBuildFile; productRef = 5171A3E527A1034E009F5780 /* Atomics */; };
 		519872FF26879B9B00F84BCC /* AccessibilityPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519872FE26879B9B00F84BCC /* AccessibilityPreferences.swift */; };
@@ -1282,6 +1283,7 @@
 				B4E4470125CE3F930069F06E /* Sparkle in Frameworks */,
 				6FC3EFAF27AC0FEA00D3D557 /* libswscale.6.dylib in Frameworks */,
 				8451E6D92604AEFC009A15D7 /* Just in Frameworks */,
+				511527B728069C7C00B3A097 /* Algorithms in Frameworks */,
 				496B19921E2968530035AF10 /* PIP.framework in Frameworks */,
 				AD0478C727953DCF005A6B9E /* libavformat.59.dylib in Frameworks */,
 				AD0478B927953DCF005A6B9E /* libavcodec.59.dylib in Frameworks */,
@@ -1797,6 +1799,7 @@
 				B4E4470025CE3F930069F06E /* Sparkle */,
 				8451E6D82604AEFC009A15D7 /* Just */,
 				5171A3E527A1034E009F5780 /* Atomics */,
+				511527B628069C7C00B3A097 /* Algorithms */,
 			);
 			productName = mpvx;
 			productReference = 84EB1ED61D2F51D3004FA5A1 /* IINA.app */;
@@ -1884,6 +1887,7 @@
 				B4E446FF25CE3F930069F06E /* XCRemoteSwiftPackageReference "Sparkle" */,
 				8451E6D72604AEFC009A15D7 /* XCRemoteSwiftPackageReference "Just" */,
 				5171A3E427A1034E009F5780 /* XCRemoteSwiftPackageReference "swift-atomics" */,
+				511527B528069C7C00B3A097 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			productRefGroup = 84EB1ED71D2F51D3004FA5A1 /* Products */;
 			projectDirPath = "";
@@ -3494,6 +3498,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		511527B528069C7C00B3A097 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		5171A3E427A1034E009F5780 /* XCRemoteSwiftPackageReference "swift-atomics" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-atomics.git";
@@ -3545,6 +3557,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		511527B628069C7C00B3A097 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 511527B528069C7C00B3A097 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
 		5171A3E527A1034E009F5780 /* Atomics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5171A3E427A1034E009F5780 /* XCRemoteSwiftPackageReference "swift-atomics" */;
