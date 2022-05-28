@@ -25,6 +25,9 @@
 /* Class = "NSTextFieldCell"; title = "Open links or current webpage in IINA with one click. The website must be supported by youtube-dl."; ObjectID = "GAo-fx-NG0"; */
 "GAo-fx-NG0.title" = "在 IINA 中打開連結或目前的網站。需為 youtube-dl 支援的網站。";
 
+/* Class = "NSWindow"; title = "Window"; ObjectID = "gck-1e-Yi7"; */
+"gck-1e-Yi7.title" = "Window";
+
 /* Class = "NSButtonCell"; title = "Clear Thumbnail Cache…"; ObjectID = "hsG-JB-TT9"; */
 "hsG-JB-TT9.title" = "清除縮覽圖快取⋯";
 

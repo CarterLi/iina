@@ -58,6 +58,9 @@
 /* Class = "NSTextFieldCell"; title = "Format Label"; ObjectID = "c6m-YO-xqZ"; */
 "c6m-YO-xqZ.title" = "格式標籤";
 
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "cCV-DA-Kkq"; */
+"cCV-DA-Kkq.title" = "Text Cell";
+
 /* Class = "NSTextFieldCell"; title = "Dropped Frames:"; ObjectID = "CrF-UR-udW"; */
 "CrF-UR-udW.title" = "丟棄影格數：";
 
@@ -273,6 +276,9 @@
 
 /* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "YcG-9Y-Qn6"; */
 "YcG-9Y-Qn6.title" = "標籤";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "ydW-J5-Kk2"; */
+"ydW-J5-Kk2.title" = "Text Cell";
 
 /* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "Zaf-qd-A4D"; */
 "Zaf-qd-A4D.title" = "標籤";

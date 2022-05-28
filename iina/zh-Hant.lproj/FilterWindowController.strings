@@ -25,14 +25,29 @@
 /* Class = "NSTableColumn"; headerCell.title = "#"; ObjectID = "amK-Iz-lu8"; */
 "amK-Iz-lu8.headerCell.title" = "#";
 
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "b3o-Jl-ta3"; */
+"b3o-Jl-ta3.title" = "Text Cell";
+
 /* Class = "NSTextFieldCell"; title = "Edit Filter"; ObjectID = "Dab-w9-6TY"; */
 "Dab-w9-6TY.title" = "編輯濾鏡";
 
 /* Class = "NSTextFieldCell"; title = "Press any button to record"; ObjectID = "dL4-so-Qss"; */
 "dL4-so-Qss.title" = "按任意鍵開始錄製";
 
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "EXM-Xm-pvG"; */
+"EXM-Xm-pvG.title" = "Table View Cell";
+
 /* Class = "NSWindow"; title = "Filters"; ObjectID = "F0z-JX-Cv5"; */
 "F0z-JX-Cv5.title" = "濾鏡";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "G4c-Vf-UqH"; */
+"G4c-Vf-UqH.title" = "Box";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "gtr-Iv-kcK"; */
+"gtr-Iv-kcK.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "GXg-4l-PJC"; */
+"GXg-4l-PJC.title" = "Text Cell";
 
 /* Class = "NSWindow"; title = "Window"; ObjectID = "hsA-Hq-fPV"; */
 "hsA-Hq-fPV.title" = "視窗";
@@ -45,6 +60,12 @@
 
 /* Class = "NSTextFieldCell"; title = "Save Filter"; ObjectID = "KGV-G1-A2l"; */
 "KGV-G1-A2l.title" = "儲存濾鏡";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "Kve-RD-QwY"; */
+"Kve-RD-QwY.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "KwW-f1-HEd"; */
+"KwW-f1-HEd.title" = "Text Cell";
 
 /* Class = "NSButtonCell"; title = "Add"; ObjectID = "ljR-R1-mo7"; */
 "ljR-R1-mo7.title" = "加入";
@@ -64,8 +85,17 @@
 /* Class = "NSButtonCell"; title = "Save"; ObjectID = "tPs-K2-ZPz"; */
 "tPs-K2-ZPz.title" = "儲存";
 
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "VvZ-dI-3GD"; */
+"VvZ-dI-3GD.title" = "Text Cell";
+
 /* Class = "NSButtonCell"; title = "Add"; ObjectID = "w2g-wR-hPu"; */
 "w2g-wR-hPu.title" = "新增";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "WAS-rj-5Np"; */
+"WAS-rj-5Np.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "XCQ-qu-0Gp"; */
+"XCQ-qu-0Gp.title" = "Text Cell";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "Xqd-Ft-hTS"; */
 "Xqd-Ft-hTS.title" = "取消";

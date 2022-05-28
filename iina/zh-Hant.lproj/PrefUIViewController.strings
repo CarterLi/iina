@@ -4,6 +4,9 @@
 /* Class = "NSMenuItem"; title = "Bottom"; ObjectID = "0Gp-vj-UzY"; */
 "0Gp-vj-UzY.title" = "位於底部";
 
+/* Class = "NSBox"; title = "Box"; ObjectID = "0kj-QC-B9P"; */
+"0kj-QC-B9P.title" = "Box";
+
 /* Class = "NSButtonCell"; title = "Customize…"; ObjectID = "1nM-AX-Ozm"; */
 "1nM-AX-Ozm.title" = "自訂⋯";
 
@@ -43,6 +46,9 @@
 /* Class = "NSButtonCell"; title = "Show chapter position in progress bar"; ObjectID = "BVV-Z3-LHR"; */
 "BVV-Z3-LHR.title" = "在進度列中顯示章節";
 
+/* Class = "NSBox"; title = "Box"; ObjectID = "bYj-5g-zYO"; */
+"bYj-5g-zYO.title" = "Box";
+
 /* Class = "NSButtonCell"; title = "When media is opened manually"; ObjectID = "CJE-ap-IH8"; */
 "CJE-ap-IH8.title" = "在手動打開媒體時";
 
@@ -54,6 +60,9 @@
 
 /* Class = "NSButtonCell"; title = "Show remaining time instead of total duration"; ObjectID = "EAa-gN-8dL"; */
 "EAa-gN-8dL.title" = "顯示剩餘時間而非總計時長";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "eTQ-fy-fNJ"; */
+"eTQ-fy-fNJ.title" = "Box";
 
 /* Class = "NSTextFieldCell"; title = "When entering Picture-in-Picture:"; ObjectID = "EUd-RD-g0T"; */
 "EUd-RD-g0T.title" = "進入「子母畫面」模式時：";
@@ -95,10 +104,10 @@
 "I8t-ey-016.title" = "點(pt)";
 
 /* Class = "NSButtonCell"; title = "Always show float on top status in the title bar"; ObjectID = "ih8-5a-PYY"; */
-"ih8-5a-PYY.title" = "";
+"ih8-5a-PYY.title" = "永遠在標題列中的頂部狀態上顯示浮動視窗";
 
 /* Class = "NSTextFieldCell"; title = "of the screen"; ObjectID = "iRn-3s-oQH"; */
-"iRn-3s-oQH.title" = "";
+"iRn-3s-oQH.title" = "的螢幕";
 
 /* Class = "NSTextFieldCell"; title = "Y offset:"; ObjectID = "KCL-Ki-A0p"; */
 "KCL-Ki-A0p.title" = "Y 位移：";
@@ -111,6 +120,9 @@
 
 /* Class = "NSTextFieldCell"; title = "Thumbnail Preview:"; ObjectID = "kYu-0l-jQQ"; */
 "kYu-0l-jQQ.title" = "縮覽圖預覽：";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "L5c-uf-ged"; */
+"L5c-uf-ged.title" = "Box";
 
 /* Class = "NSTextFieldCell"; title = "Layout:"; ObjectID = "l54-63-V6n"; */
 "l54-63-V6n.title" = "佈局：";
@@ -126,6 +138,9 @@
 
 /* Class = "NSMenuItem"; title = "1x video size"; ObjectID = "MR7-Ac-SAO"; */
 "MR7-Ac-SAO.title" = "1 倍影片大小";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "Mye-uz-WUr"; */
+"Mye-uz-WUr.title" = "Box";
 
 /* Class = "NSTextFieldCell"; title = "Auto hide after:"; ObjectID = "NUr-hY-gfo"; */
 "NUr-hY-gfo.title" = "自動隱藏間隔：";
@@ -145,8 +160,14 @@
 /* Class = "NSMenuItem"; title = "Previous / Next Media"; ObjectID = "oJ8-74-L3z"; */
 "oJ8-74-L3z.title" = "上一個/下一個媒體";
 
+/* Class = "NSBox"; title = "Box"; ObjectID = "omS-tS-OVJ"; */
+"omS-tS-OVJ.title" = "Box";
+
 /* Class = "NSMenuItem"; title = "top"; ObjectID = "oYc-L7-qQd"; */
 "oYc-L7-qQd.title" = "頂";
+
+/* Class = "NSTextFieldCell"; title = "1280"; ObjectID = "pNX-QN-Rpm"; */
+"pNX-QN-Rpm.title" = "1280";
 
 /* Class = "NSMenuItem"; title = "Ultra Dark"; ObjectID = "pV2-12-PmM"; */
 "pV2-12-PmM.title" = "極致深色";
@@ -175,6 +196,9 @@
 /* Class = "NSTextFieldCell"; title = "Text size:"; ObjectID = "suy-e8-j4i"; */
 "suy-e8-j4i.title" = "字體大小：";
 
+/* Class = "NSTextFieldCell"; title = "20"; ObjectID = "t7H-9k-P9a"; */
+"t7H-9k-P9a.title" = "20";
+
 /* Class = "NSMenuItem"; title = "Medium Light"; ObjectID = "TdN-pM-HHk"; */
 "TdN-pM-HHk.title" = "中等亮度";
 
@@ -192,6 +216,9 @@
 
 /* Class = "NSMenuItem"; title = "Dark"; ObjectID = "VvZ-mQ-wQB"; */
 "VvZ-mQ-wQB.title" = "深色";
+
+/* Class = "NSTextFieldCell"; title = "20"; ObjectID = "WPh-0F-JGL"; */
+"WPh-0F-JGL.title" = "20";
 
 /* Class = "NSMenuItem"; title = "point"; ObjectID = "X5B-TZ-ISz"; */
 "X5B-TZ-ISz.title" = "像素";

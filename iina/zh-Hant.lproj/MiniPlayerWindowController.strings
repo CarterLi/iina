@@ -1,3 +1,6 @@
+/* Class = "NSTextFieldCell"; title = "50"; ObjectID = "aot-6J-Jp7"; */
+"aot-6J-Jp7.title" = "50";
+
 /* Class = "NSWindow"; title = "Window"; ObjectID = "F0z-JX-Cv5"; */
 "F0z-JX-Cv5.title" = "視窗";
 
@@ -13,8 +16,17 @@
 /* Class = "NSTextFieldCell"; title = "Artist - Album"; ObjectID = "Nle-gv-CWY"; */
 "Nle-gv-CWY.title" = "藝人 – 專輯";
 
+/* Class = "NSBox"; title = "Box"; ObjectID = "NWy-Hm-vxL"; */
+"NWy-Hm-vxL.title" = "Box";
+
 /* Class = "NSTextFieldCell"; title = "Title"; ObjectID = "Rs9-6l-6vp"; */
 "Rs9-6l-6vp.title" = "標題";
+
+/* Class = "NSTextFieldCell"; title = "-:--:--"; ObjectID = "V74-PQ-Yfr"; */
+"V74-PQ-Yfr.title" = "-:--:--";
+
+/* Class = "NSTextFieldCell"; title = "-:--:--"; ObjectID = "WnA-NE-3bG"; */
+"WnA-NE-3bG.title" = "-:--:--";
 
 /* Class = "NSButton"; ibShadowedToolTip = "Back to video mode"; ObjectID = "WS6-ix-uBJ"; */
 "WS6-ix-uBJ.ibShadowedToolTip" = "返回視訊模式";

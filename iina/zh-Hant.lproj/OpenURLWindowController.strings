@@ -10,11 +10,17 @@
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "iNG-ee-EW6"; */
 "iNG-ee-EW6.title" = "取消";
 
+/* Class = "NSTextFieldCell"; title = "http://"; ObjectID = "kqT-tD-Wzp"; */
+"kqT-tD-Wzp.title" = "http://";
+
 /* Class = "NSButtonCell"; title = "Remember username and password for this host in keychain"; ObjectID = "m0D-hR-3pr"; */
 "m0D-hR-3pr.title" = "在我的鑰匙圈中記錄這組連到遠端主機的使用者名稱和密碼";
 
 /* Class = "NSTextFieldCell"; title = "Username"; ObjectID = "Q1z-9O-n4X"; */
 "Q1z-9O-n4X.title" = "使用者名稱";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "qud-MM-CKm"; */
+"qud-MM-CKm.title" = "Box";
 
 /* Class = "NSTextFieldCell"; title = "Password"; ObjectID = "uM6-Bp-Wdk"; */
 "uM6-Bp-Wdk.title" = "密碼";
