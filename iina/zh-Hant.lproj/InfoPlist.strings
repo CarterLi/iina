@@ -1,3 +1,108 @@
 /* (No Comment) */
+"3GPP File" = "3GPP 檔案";
+
+/* (No Comment) */
+"3GPP2 File" = "3GPP2 檔案";
+
+/* (No Comment) */
+"AAC file" = "AAC 檔案";
+
+/* (No Comment) */
+"Advanced Streaming Format" = "進階串流格式";
+
+/* (No Comment) */
+"AIFF file" = "AIFF 檔案";
+
+/* (No Comment) */
+"Apple QuickTime container" = "Apple QuickTime 容器";
+
+/* (No Comment) */
+"AVI container" = "AVI 容器";
+
+/* Bundle name */
+"CFBundleName" = "IINA";
+
+/* (No Comment) */
+"Digital Audio" = "Digital Audio";
+
+/* (No Comment) */
+"DivX file" = "DivX 檔案";
+
+/* (No Comment) */
+"DV file" = "DV 檔案";
+
+/* (No Comment) */
+"FLAC Audio File" = "FLAC 音訊檔案";
+
+/* (No Comment) */
+"Flash Video File" = "Flash 影片檔案";
+
+/* (No Comment) */
+"Matroska Audio File" = "Matroska 音訊檔案";
+
+/* (No Comment) */
+"Matroska Video File" = "Matroska 影片檔案";
+
+/* (No Comment) */
+"MIDI File" = "MIDI 檔案";
+
+/* (No Comment) */
+"Monkey's Audio Lossless Audio" = "Monkey's Audio 無損音訊";
+
+/* (No Comment) */
+"MPEG Audio File" = "MPEG 音訊檔案";
+
+/* (No Comment) */
+"MPEG Video File" = "MPEG 影片檔案";
+
+/* (No Comment) */
+"MPEG-2 Stream" = "MPEG-2 串流";
+
+/* (No Comment) */
+"MPEG3 Audio File" = "MPEG3 音訊檔案";
+
+/* (No Comment) */
+"MPEG4 Audio File" = "MPEG4 音訊檔案";
+
+/* (No Comment) */
+"MPEG4 Video File" = "MPEG4 影片檔案";
+
+/* Copyright (human-readable) */
 "NSHumanReadableCopyright" = "基於 GPLv3 授權發佈";
+
+/* (No Comment) */
+"Ogg Audio File" = "Ogg 音訊檔案";
+
+/* (No Comment) */
+"Ogg Video File" = "Ogg 影片檔案";
+
+/* (No Comment) */
+"OPUS file" = "OPUS 檔案";
+
+/* (No Comment) */
+"RealPlayer Media Files" = "RealPlayer 媒體檔案";
+
+/* (No Comment) */
+"VOB File (DVD Video)" = "VOB 檔案（DVD 影片）";
+
+/* (No Comment) */
+"WAVE Audio File" = "WAVE 音訊檔案";
+
+/* (No Comment) */
+"WavePack Audio File" = "WavePack 音訊檔案";
+
+/* (No Comment) */
+"WebM Video File" = "WebM 影片檔案";
+
+/* (No Comment) */
+"Windows Media Audio" = "Windows Media 音訊";
+
+/* (No Comment) */
+"Windows Media Video" = "Windows Media 影片";
+
+/* (No Comment) */
+"Windows Recorded TV Show" = "Windows 錄製 TV 節目";
+
+/* (No Comment) */
+"XM audio file" = "XM 音訊檔案";
 

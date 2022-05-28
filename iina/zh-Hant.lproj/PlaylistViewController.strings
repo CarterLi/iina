@@ -1,11 +1,11 @@
-/* Class = "NSMenuItem"; title = "Add File…"; ObjectID = "CI2-Gm-j4o"; */
-"CI2-Gm-j4o.title" = "新增檔案⋯";
-
-/* Class = "NSButton"; ibShadowedToolTip = "Folded common prefix"; ObjectID = "U4W-Xv-hkh"; */
-"U4W-Xv-hkh.ibShadowedToolTip" = "被摺疊的共用通用字首";
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "6J7-iM-V5h"; */
+"6J7-iM-V5h.title" = "標籤";
 
 /* Class = "NSTabViewItem"; label = "Chapters"; ObjectID = "aaR-kR-im0"; */
 "aaR-kR-im0.label" = "章節";
+
+/* Class = "NSMenuItem"; title = "Add File…"; ObjectID = "CI2-Gm-j4o"; */
+"CI2-Gm-j4o.title" = "新增檔案⋯";
 
 /* Class = "NSButtonCell"; title = "PLAYLIST"; ObjectID = "fAq-Pq-ThP"; */
 "fAq-Pq-ThP.title" = "播放列表";
@@ -19,8 +19,21 @@
 /* Class = "NSTabViewItem"; label = "Playlist"; ObjectID = "rjs-Qf-mT6"; */
 "rjs-Qf-mT6.label" = "播放列表";
 
+/* Class = "NSButton"; ibShadowedToolTip = "Folded common prefix"; ObjectID = "U4W-Xv-hkh"; */
+"U4W-Xv-hkh.ibShadowedToolTip" = "被摺疊的共通字首";
+
+/* Class = "NSTextFieldCell"; title = "Chapter Title"; ObjectID = "vmJ-Ry-xgK"; */
+"vmJ-Ry-xgK.title" = "章節標題";
+
+/* Class = "NSTextFieldCell"; title = "Info"; ObjectID = "XWP-pU-mZg"; */
+"XWP-pU-mZg.title" = "資訊";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "zbw-ad-lgl"; */
+"zbw-ad-lgl.title" = "標籤";
+
 /* Class = "NSMenuItem"; title = "Add URL…"; ObjectID = "zeJ-cr-tRg"; */
 "zeJ-cr-tRg.title" = "新增 URL⋯";
 
 /* Class = "NSButtonCell"; title = "Wrong Subtitle!"; ObjectID = "zod-Ch-cOH"; */
-"zod-Ch-cOH.title" = "錯誤的字幕！";
+"zod-Ch-cOH.title" = "字幕錯誤！";
+

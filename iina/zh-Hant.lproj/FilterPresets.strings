@@ -1,55 +1,105 @@
-/*
-  FilterPresets.strings
-  iina
-
-  Created by lhc on 25/8/2017.
-  Copyright © 2017 lhc. All rights reserved.
-*/
-/* It's optional to localize descriptions for each parameter! */
-
-
-
-"crop" = "裁切";
-"crop.w" = "寬度（預設值：影片寬度）";
-"crop.h" = "高度（預設值：影片高度）";
-"crop.x" = "原點 X（預設值：中央）";
-"crop.y" = "原點 Y（預設值：中央）";
-
-"expand" = "展開";
-"expand.w" = "寬度（預設值：影片寬度）";
-"expand.h" = "高度（預設值：影片高度）";
-"expand.x" = "原點 X（預設值：中央）";
-"expand.y" = "原點 Y（預設值：中央）";
-"expand.aspect" = "展開以符合比例（例如：4/3）";
-"expand.round" = "四捨五入整除此值";
-
-"sharpen" = "銳利化";
-"sharpen.msize" = "矩陣大小";
-"sharpen.amount" = "銳利量";
-
+/* (No Comment) */
 "blur" = "模糊";
-"blur.msize" = "矩陣大小";
+
+/* (No Comment) */
 "blur.amount" = "模糊量";
 
-"delogo" = "去水印";
-"delogo.w" = "寬度";
-"delogo.h" = "高度";
-"delogo.x" = "原點 X";
-"delogo.y" = "原點 Y";
+/* (No Comment) */
+"blur.msize" = "矩陣大小";
 
-"negative" = "負片";
+/* It's optional to localize descriptions for each parameter! */
+"crop" = "裁切";
 
-"vflip" = "垂直翻轉";
-"hflip" = "水平翻轉";
+/* (No Comment) */
+"crop.h" = "高度（預設值：影片高度）";
 
-"lut3d" = "3D LUT";
-"lut3d.file" = "檔案";
-"lut3d.interp" = "補幀模式";
+/* (No Comment) */
+"crop.w" = "寬度（預設值：影片寬度）";
 
+/* (No Comment) */
+"crop.x" = "原點 X（預設值：中央）";
+
+/* (No Comment) */
+"crop.y" = "原點 Y（預設值：中央）";
+
+/* (No Comment) */
+"custom_ffmpeg" = "自訂（FFmpeg）";
+
+/* (No Comment) */
+"custom_ffmpeg.name" = "濾鏡名稱";
+
+/* (No Comment) */
+"custom_ffmpeg.string" = "濾鏡字串";
+
+/* (No Comment) */
 "custom_mpv" = "自訂（mpv）";
+
+/* (No Comment) */
 "custom_mpv.name" = "濾鏡名稱";
+
+/* (No Comment) */
 "custom_mpv.string" = "濾鏡字串";
 
-"custom_ffmpeg" = "自訂（FFmpeg）";
-"custom_ffmpeg.name" = "濾鏡名稱";
-"custom_ffmpeg.string" = "濾鏡字串";
+/* (No Comment) */
+"delogo" = "去水印";
+
+/* (No Comment) */
+"delogo.h" = "高度";
+
+/* (No Comment) */
+"delogo.w" = "寬度";
+
+/* (No Comment) */
+"delogo.x" = "原點 X";
+
+/* (No Comment) */
+"delogo.y" = "原點 Y";
+
+/* (No Comment) */
+"expand" = "展開";
+
+/* (No Comment) */
+"expand.aspect" = "展開以符合比例（例如：4/3）";
+
+/* (No Comment) */
+"expand.h" = "高度（預設值：影片高度）";
+
+/* (No Comment) */
+"expand.round" = "四捨五入至使此值可整除";
+
+/* (No Comment) */
+"expand.w" = "寬度（預設值：影片寬度）";
+
+/* (No Comment) */
+"expand.x" = "原點 X（預設值：中央）";
+
+/* (No Comment) */
+"expand.y" = "原點 Y（預設值：中央）";
+
+/* (No Comment) */
+"hflip" = "水平翻轉";
+
+/* (No Comment) */
+"lut3d" = "3D LUT";
+
+/* (No Comment) */
+"lut3d.file" = "檔案路徑（您也可以將檔案拖曳到本輸入框）";
+
+/* (No Comment) */
+"lut3d.interp" = "補幀模式";
+
+/* (No Comment) */
+"negative" = "負片";
+
+/* (No Comment) */
+"sharpen" = "銳利化";
+
+/* (No Comment) */
+"sharpen.amount" = "銳利量";
+
+/* (No Comment) */
+"sharpen.msize" = "矩陣大小";
+
+/* (No Comment) */
+"vflip" = "垂直翻轉";
+

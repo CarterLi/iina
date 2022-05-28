@@ -1,17 +1,20 @@
 /* Class = "NSMenuItem"; title = "Auto (Copy)"; ObjectID = "0DK-uZ-duj"; */
 "0DK-uZ-duj.title" = "自動（拷貝）";
 
+/* Class = "NSButtonCell"; title = "AC3"; ObjectID = "1uU-MC-7Yh"; */
+"1uU-MC-7Yh.title" = "AC3";
+
 /* Class = "NSTextFieldCell"; title = "Default: 0 (Auto)"; ObjectID = "2yO-To-el7"; */
 "2yO-To-el7.title" = "預設：0（自動）";
+
+/* Class = "NSButtonCell"; title = "Load ICC profile"; ObjectID = "3g4-jW-uJd"; */
+"3g4-jW-uJd.title" = "載入 ICC 描述檔";
 
 /* Class = "NSTextFieldCell"; title = "Maximum volume:"; ObjectID = "44m-ge-naq"; */
 "44m-ge-naq.title" = "最高音量：";
 
 /* Class = "NSTextFieldCell"; title = "Number of threads:"; ObjectID = "50C-1R-wlJ"; */
-"50C-1R-wlJ.title" = "執行緒數：";
-
-/* Class = "NSButtonCell"; title = "Force dedicated GPU"; ObjectID = "YUr-aJ-xfC"; */
-"YUr-aJ-xfC.title" = "強制使用獨立 GPU";
+"50C-1R-wlJ.title" = "執行緒數量：";
 
 /* Class = "NSTextFieldCell"; title = "Default: 0 (Auto)"; ObjectID = "bxW-np-SGm"; */
 "bxW-np-SGm.title" = "預設：0（自動）";
@@ -22,11 +25,26 @@
 /* Class = "NSButtonCell"; title = "Initial volume:"; ObjectID = "g4c-vG-URh"; */
 "g4c-vG-URh.title" = "初始音量：";
 
-/* Class = "NSTextFieldCell"; title = "Always use the dedicated GPU for rendering (if exists). This can improve performance but may result in poor battery life."; ObjectID = "gCv-sJ-uQJ"; */
-"gCv-sJ-uQJ.title" = "渲染時總是使用獨立 GPU (如果可用)。這將會提高效能，但可能會減少電池壽命。";
+/* Class = "NSTextFieldCell"; title = "Always use the dedicated GPU for rendering (if it exists). This can improve performance but may reduce battery life."; ObjectID = "gCv-sJ-uQJ"; */
+"gCv-sJ-uQJ.title" = "算圖時總是使用獨立 GPU（如果可用）。這將提高效能，但可能會減少電池壽命。";
+
+/* Class = "NSButtonCell"; title = "DTS-HD"; ObjectID = "I34-op-NZK"; */
+"I34-op-NZK.title" = "DTS-HD";
+
+/* Class = "NSMenuItem"; title = "Item 1"; ObjectID = "iQf-Gb-IuO"; */
+"iQf-Gb-IuO.title" = "項目 1";
+
+/* Class = "NSButtonCell"; title = "DTS"; ObjectID = "Le8-wj-Pei"; */
+"Le8-wj-Pei.title" = "DTS";
+
+/* Class = "NSTextFieldCell"; title = "Load the ICC profile for current display and use it to transform video RGB to screen output. (Only for SDR mode)"; ObjectID = "M2M-of-gjd"; */
+"M2M-of-gjd.title" = "載入適合目前顯示器的 ICC 描述檔，並將此描述檔用來將影片 RGB 轉換至螢幕輸出（僅適用於 SDR 模式）";
 
 /* Class = "NSTextFieldCell"; title = "Video:"; ObjectID = "m5P-5f-5uo"; */
 "m5P-5f-5uo.title" = "視訊：";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "n3r-mP-f8V"; */
+"n3r-mP-f8V.title" = "標籤";
 
 /* Class = "NSTextFieldCell"; title = "Hardware decoder:"; ObjectID = "nwg-2K-G2G"; */
 "nwg-2K-G2G.title" = "硬體解碼器：";
@@ -44,10 +62,14 @@
 "tAQ-oU-1AJ.title" = "自動";
 
 /* Class = "NSTextFieldCell"; title = "Number of threads:"; ObjectID = "tO4-pw-2W9"; */
-"tO4-pw-2W9.title" = "執行緒數：";
+"tO4-pw-2W9.title" = "執行緒數量：";
 
 /* Class = "NSTextFieldCell"; title = "S/PDIF output:"; ObjectID = "up6-6A-4sn"; */
 "up6-6A-4sn.title" = "S/PDIF 輸出：";
 
 /* Class = "NSTextFieldCell"; title = "Preferred language:"; ObjectID = "wjt-O6-KbC"; */
 "wjt-O6-KbC.title" = "偏好的語言：";
+
+/* Class = "NSButtonCell"; title = "Force dedicated GPU"; ObjectID = "YUr-aJ-xfC"; */
+"YUr-aJ-xfC.title" = "強制使用獨立 GPU";
+

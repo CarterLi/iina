@@ -1,5 +1,15 @@
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "bTQ-iD-3rD"; */
+"bTQ-iD-3rD.title" = "標籤";
+
 /* Class = "NSWindow"; title = "Preferences"; ObjectID = "F0z-JX-Cv5"; */
 "F0z-JX-Cv5.title" = "偏好設定";
 
 /* Class = "NSTextFieldCell"; title = "No Result"; ObjectID = "jUU-3A-jLW"; */
 "jUU-3A-jLW.title" = "沒有結果";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "nPh-AY-eX8"; */
+"nPh-AY-eX8.title" = "標籤";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "Yqs-iT-EDU"; */
+"Yqs-iT-EDU.title" = "標籤";
+

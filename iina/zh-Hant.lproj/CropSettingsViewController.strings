@@ -6,3 +6,7 @@
 
 /* Class = "NSButtonCell"; title = "Done"; ObjectID = "eu5-yH-hHg"; */
 "eu5-yH-hHg.title" = "完成";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "Fgl-Cs-eEh"; */
+"Fgl-Cs-eEh.title" = "標籤";
+

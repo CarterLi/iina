@@ -4,8 +4,20 @@
 /* Class = "NSTextFieldCell"; title = "Available Items:"; ObjectID = "DeE-Yj-Q4D"; */
 "DeE-Yj-Q4D.title" = "可用的項目：";
 
+/* Class = "NSWindow"; title = "Window"; ObjectID = "F0z-JX-Cv5"; */
+"F0z-JX-Cv5.title" = "視窗";
+
+/* Class = "NSTextFieldCell"; title = "Drag an item out of the box to delete it."; ObjectID = "jlb-xc-k6x"; */
+"jlb-xc-k6x.title" = "將項目拖移出方框來刪除它。";
+
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "Jrf-II-Cfc"; */
 "Jrf-II-Cfc.title" = "取消";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "l1W-AA-5L4"; */
+"l1W-AA-5L4.title" = "方框";
+
+/* Class = "NSTextFieldCell"; title = "Current Items:"; ObjectID = "rNU-8V-iQt"; */
+"rNU-8V-iQt.title" = "目前的項目：";
 
 /* Class = "NSButtonCell"; title = "Restore Default"; ObjectID = "SmC-AI-FG6"; */
 "SmC-AI-FG6.title" = "回復預設值";
@@ -13,8 +25,3 @@
 /* Class = "NSTextFieldCell"; title = "Drag an item and drop it to the above box to add it."; ObjectID = "VCG-VX-E3M"; */
 "VCG-VX-E3M.title" = "將項目拖移到上面來新增。";
 
-/* Class = "NSTextFieldCell"; title = "Drag an item out of the box to delete it."; ObjectID = "jlb-xc-k6x"; */
-"jlb-xc-k6x.title" = "將項目拖移出方框來刪除它。";
-
-/* Class = "NSTextFieldCell"; title = "Current Items:"; ObjectID = "rNU-8V-iQt"; */
-"rNU-8V-iQt.title" = "目前的項目：";

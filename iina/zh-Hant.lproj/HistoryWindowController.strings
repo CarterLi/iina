@@ -19,23 +19,14 @@
 /* Class = "NSMenuItem"; title = "Search in"; ObjectID = "Gx5-gP-rzr"; */
 "Gx5-gP-rzr.title" = "搜尋";
 
+/* Class = "NSMenu"; title = "Context Menu"; ObjectID = "lR3-1E-Rwr"; */
+"lR3-1E-Rwr.title" = "特色選單";
+
 /* Class = "NSTableColumn"; headerCell.title = "Played at"; ObjectID = "M7K-6H-OPw"; */
 "M7K-6H-OPw.headerCell.title" = "播放時間";
 
 /* Class = "NSTableColumn"; headerCell.title = "Progress"; ObjectID = "MJU-JY-7fx"; */
 "MJU-JY-7fx.headerCell.title" = "進度";
-
-/* Class = "NSMenuItem"; title = "Date"; ObjectID = "QBO-JS-dNV"; */
-"QBO-JS-dNV.title" = "日期";
-
-/* Class = "NSMenuItem"; title = "Folder"; ObjectID = "VH5-en-8FR"; */
-"VH5-en-8FR.title" = "檔案夾";
-
-/* Class = "NSMenuItem"; title = "Filename"; ObjectID = "Wkp-Vn-JoJ"; */
-"Wkp-Vn-JoJ.title" = "檔案名稱";
-
-/* Class = "NSMenu"; title = "Context Menu"; ObjectID = "lR3-1E-Rwr"; */
-"lR3-1E-Rwr.title" = "操作選單";
 
 /* Class = "NSMenuItem"; title = "Play in New Window"; ObjectID = "mXt-wb-fgT"; */
 "mXt-wb-fgT.title" = "以新視窗播放";
@@ -46,8 +37,21 @@
 /* Class = "NSMenuItem"; title = "Play"; ObjectID = "oMR-4K-aR2"; */
 "oMR-4K-aR2.title" = "播放";
 
+/* Class = "NSMenuItem"; title = "Date"; ObjectID = "QBO-JS-dNV"; */
+"QBO-JS-dNV.title" = "日期";
+
+/* Class = "NSMenuItem"; title = "Item"; ObjectID = "tmr-oC-rNa"; */
+"tmr-oC-rNa.title" = "項目";
+
+/* Class = "NSMenuItem"; title = "Folder"; ObjectID = "VH5-en-8FR"; */
+"VH5-en-8FR.title" = "檔案夾";
+
+/* Class = "NSMenuItem"; title = "Filename"; ObjectID = "Wkp-Vn-JoJ"; */
+"Wkp-Vn-JoJ.title" = "檔案名稱";
+
 /* Class = "NSTextFieldCell"; title = "Group by:"; ObjectID = "z6c-c4-dgd"; */
 "z6c-c4-dgd.title" = "分類方式：";
 
 /* Class = "NSMenuItem"; title = "Recent Searches"; ObjectID = "zhe-yr-CTO"; */
 "zhe-yr-CTO.title" = "最近的搜尋項目";
+
