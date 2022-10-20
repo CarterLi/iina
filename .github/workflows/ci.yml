@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [develop]
+    branches: [iina-plus#64]
 
 jobs:
   build-x64:
