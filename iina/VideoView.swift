@@ -384,10 +384,11 @@ extension VideoView {
       return false
     }
 
-    if (window?.screen?.maximumPotentialExtendedDynamicRangeColorComponentValue ?? 1.0) <= 1.0 {
-      Logger.log("The display does not support EDR mode", subsystem: hdrSubsystem)
-      return false
-    }
+    // https://github.com/iina-plus/iina/issues/64
+//     if (window?.screen?.maximumPotentialExtendedDynamicRangeColorComponentValue ?? 1.0) <= 1.0 {
+//       Logger.log("The display does not support EDR mode", subsystem: hdrSubsystem)
+//       return false
+//     }
 
     Logger.log("Will activate HDR color space instead of using ICC profile", subsystem: hdrSubsystem)
     videoLayer.wantsExtendedDynamicRangeContent = true
